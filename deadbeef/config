@@ -1,0 +1,126 @@
+cli_add_playlist_name Default
+cli_add_to_specific_playlist 1
+deadbeef_version 0.6.2
+filechooser.lastdir file:///home/johnny/Videos/Bible/Chuck%20Missler/Chuck%20Missler%20-%20Mp3%20Studies
+gtkui.color.bar_foreground 0 62708 0
+gtkui.color.listview_even_row 65535 16962 58596
+gtkui.color.listview_odd_row 55705 14418 49806
+gtkui.color.listview_selection 44718 11565 40092
+gtkui.color.tabstrip_base 65535 0 25700
+gtkui.color.tabstrip_dark 55769 0 21845
+gtkui.color.tabstrip_light 65535 15420 31611
+gtkui.color.tabstrip_mid 65535 9766 31611
+gtkui.color.tabstrip_text 0 0 0
+gtkui.hide_remove_from_disk 1
+gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 1" homogeneous=0 {playtb {} seekbar {} volumebar {} } tabbed_playlist hideheaders=0 {} } 
+gtkui.mmb_delete_playlist 1
+gtkui.name_playlist_from_folder 1
+gtkui.override_bar_colors 1
+gtkui.override_listview_colors 1
+gtkui.override_tabstrip_colors 1
+gtkui.statusbar.visible 1
+gtkui.tabscroll 0
+gtkui.titlebar_playing %a - %t - DeaDBeeF-%V
+gtkui.titlebar_stopped DeaDBeeF-%V
+gui_plugin GTK2
+hotkey.key01 "Ctrl f" 0 0 find
+hotkey.key02 "Ctrl o" 0 0 open_files
+hotkey.key03 "Ctrl q" 0 0 quit
+hotkey.key04 "Ctrl n" 0 0 new_playlist
+hotkey.key05 "Ctrl a" 0 0 select_all
+hotkey.key06 "Escape" 0 0 deselect_all
+hotkey.key07 "Ctrl m" 0 0 toggle_stop_after_current
+hotkey.key08 "Ctrl j" 0 0 jump_to_current_track
+hotkey.key09 "F1" 0 0 help
+hotkey.key10 "Delete" 1 0 remove_from_playlist
+hotkey.key11 "Ctrl w" 0 0 remove_current_playlist
+hotkey.key14 "Return" 0 0 play
+hotkey.key15 "Ctrl p" 0 0 toggle_pause
+hotkey.key16 "Alt 1" 0 0 playlist1
+hotkey.key17 "Alt 2" 0 0 playlist2
+hotkey.key18 "Alt 3" 0 0 playlist3
+hotkey.key19 "Alt 4" 0 0 playlist4
+hotkey.key20 "Alt 5" 0 0 playlist5
+hotkey.key21 "Alt 6" 0 0 playlist6
+hotkey.key22 "Alt 7" 0 0 playlist7
+hotkey.key23 "Alt 8" 0 0 playlist8
+hotkey.key24 "Alt 9" 0 0 playlist9
+hotkey.key25 "Alt 0" 0 0 playlist10
+hotkey.key26 z 0 0 prev
+hotkey.key27 x 0 0 play
+hotkey.key28 c 0 0 toggle_pause
+hotkey.key29 v 0 0 stop
+hotkey.key30 b 0 0 next
+hotkey.key31 n 0 0 playback_random
+hotkey.key32 "Ctrl k" 0 0 toggle_stop_after_album
+hotkeys_created 1
+ignore_archives 1
+junk.enable_cp1251_detection 1
+junk.enable_shift_jis_detection 1
+mainwin.geometry.h 387
+mainwin.geometry.maximized 0
+mainwin.geometry.w 1120
+mainwin.geometry.x 798
+mainwin.geometry.y 0
+network.http_user_agent deadbeef
+network.proxy.port 8080
+network.proxy.type HTTP
+playback.loop 0
+playback.order 0
+playback.volume 0.0000000
+playlist.column.00 "♫" "" 1 50 0
+playlist.column.01 "Artist / Album" "%a - %b" -1 285 0
+playlist.column.02 "Track No" "%n" -1 67 1
+playlist.column.03 "Title" "%t" -1 391 0
+playlist.column.04 "Duration" "%l" -1 65 0
+playlist.column.05 "Bitrate" "%@:BITRATE@" -1 53 1
+playlist.current 9
+playlist.cursor.0 402
+playlist.cursor.1 6
+playlist.cursor.10 0
+playlist.cursor.2 56
+playlist.cursor.3 15
+playlist.cursor.4 331
+playlist.cursor.5 112
+playlist.cursor.6 97
+playlist.cursor.7 67
+playlist.cursor.8 0
+playlist.cursor.9 0
+playlist.scroll.0 6090
+playlist.scroll.1 3678
+playlist.scroll.10 0
+playlist.scroll.2 1137
+playlist.scroll.3 0
+playlist.scroll.4 6452
+playlist.scroll.5 898
+playlist.scroll.6 1811
+playlist.scroll.7 1211
+playlist.scroll.8 0
+playlist.scroll.9 0
+playlist.scroll.cursorfollowplayback 1
+playlist.tab.00000 Music
+playlist.tab.00001 EDM
+playlist.tab.00002 OST
+playlist.tab.00003 Pop
+playlist.tab.00004 Rock
+playlist.tab.00005 missler
+playlist.tab.00006 trent
+playlist.tab.00007 chuck
+playlist.tab.00008 CS Lewis
+playlist.tab.00009 Through The Bible
+prefwin.geometry.h 438
+prefwin.geometry.w 645
+prefwin.geometry.x 2180
+prefwin.geometry.y 0
+replaygain_mode 0
+replaygain_scale 1
+resume.paused 0
+resume.playlist 6
+resume.position 0.0000000
+resume.track 97
+resume_last_session 0
+searchwin.geometry.h 150
+searchwin.geometry.w 450
+searchwin.geometry.x 734
+searchwin.geometry.y 448
+streamer.8_to_16 1

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Run">
+    <action name="Execute">
+    	<execute>
+    		gmrun
+    	</execute>
+    </action>
+  </item>
+  <separator />
+  <menu id="files" label="Files">
+    <item label="Terminal">
+      <action name="Execute">
+        <execute>
+          x-terminal-emulator
+        </execute>
+      </action>
+    </item>
+    <item label="File Manager">
+      <action name="Execute">
+        <execute>
+          thunar
+        </execute>
+      </action>
+    </item>
+    <item label="Archive Manager">
+      <action name="Execute">
+        <execute>
+          file-roller
+        </execute>
+      </action>
+    </item>
+  </menu>
+
+  <menu id="dev" label="Development">
+    <item label="Firefox">
+      <action name="Execute">
+        <execute>
+          ~/bin/firefox/firefox
+        </execute>
+      </action>
+    </item>
+    <item label="Sublime Text">
+      <action name="Execute">
+        <execute>
+          subl
+        </execute>
+      </action>
+    </item>
+    <item label="Virtualbox">
+      <action name="Execute">
+        <execute>
+          virtualbox
+        </execute>
+      </action>
+    </item>
+    <item label="Filezilla">
+      <action name="Execute">
+        <execute>
+          filezilla
+        </execute>
+      </action>
+    </item>
+  </menu>
+
+  <menu id="media" label="Media">
+    <item label="Music">
+      <action name="Execute">
+        <execute>
+          /home/johnny/bin/deadbeef-0.6.2/deadbeef
+        </execute>
+      </action>
+    </item>
+  <item label="Movies">
+      <action name="Execute">
+        <execute>
+          smplayer
+        </execute>
+      </action>
+    </item>
+  </menu>
+
+  <separator />
+  <item label="arandr">
+    <action name="Execute">
+      <execute>
+        arandr
+      </execute>
+    </action>
+  </item>
+
+  <item label="Wallpapers">
+    <action name="Execute">
+      <execute>
+        nitrogen
+      </execute>
+    </action>
+  </item>
+
+  <menu id="ob" label="Openbox">
+    <item label="Re-Configure">
+      <action name="Reconfigure" />
+    </item>
+  </menu>
+
+  <item label="Tint2 Restart">
+    <action name="Execute">
+      <execute>
+        tint2restart
+      </execute>
+    </action>
+  </item>
+ 
+  <separator />
+  <item label="Exit">
+    <action name="Execute">
+      <execute>
+        cb-exit
+      </execute>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>
