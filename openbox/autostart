@@ -65,3 +65,4 @@ xset b off &
 # Autorun Programs
 (sleep 30s && icedove) &
 (sleep 60s && skype) &
+(sleep 90s && conky) &
