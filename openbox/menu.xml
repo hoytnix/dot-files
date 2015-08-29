@@ -49,6 +49,13 @@
                 </execute>
             </action>
         </item>
+        <item label="Filezilla">
+            <action name="Execute">
+                <execute>
+                    filezilla
+                </execute>
+            </action>
+        </item>
     </menu>
 
     <menu id="dev" label="Development">
@@ -66,61 +73,93 @@
                 </execute>
             </action>
         </item>
-        <item label="Filezilla">
-            <action name="Execute">
-                <execute>
-                    filezilla
-                </execute>
-            </action>
-        </item>
     </menu>
 
     <menu id="media" label="Media">
-        <item label="Music">
-            <action name="Execute">
-                <execute>
-                    /home/johnny/bin/deadbeef-0.6.2/deadbeef
-                </execute>
-            </action>
-        </item>
-        <item label="Movies">
-            <action name="Execute">
-                <execute>
-                    smplayer
-                </execute>
-            </action>
-        </item>
-        <item label="Comics">
-            <action name="Execute">
-                <execute>
-                    mcomix
-                </execute>
-            </action>
-        </item>
+        <menu id="media-consumption" label="Consumption">
+            <item label="Music">
+                <action name="Execute">
+                    <execute>
+                        /home/johnny/bin/deadbeef-0.6.2/deadbeef
+                    </execute>
+                </action>
+            </item>
+            <item label="Movies">
+                <action name="Execute">
+                    <execute>
+                        smplayer
+                    </execute>
+                </action>
+            </item>
+            <item label="Photos">
+                <action name="Execute">
+                    <execute>
+                        shotwell
+                    </execute>
+                </action>
+            </item>
+            <item label="Comics">
+                <action name="Execute">
+                    <execute>
+                        mcomix
+                    </execute>
+                </action>
+            </item>
+        </menu>
 
-        <separator />
+        <menu id="media-production" label="Production">
+            
+            <menu id="media-production-audio" label="Audio">
+                <item label="Audacity">
+                    <action name="Execute">
+                        <execute>
+                            audacity
+                        </execute>
+                    </action>
+                </item>
+                <item label="LMMS">
+                    <action name="Execute">
+                        <execute>
+                            lmms
+                        </execute>
+                    </action>
+                </item> 
+            </menu>
 
-        <item label="Burner">
-            <action name="Execute">
-                <execute>
-                    k3b
-                </execute>
-            </action>
-        </item>
-        <item label="Blender">
-            <action name="Execute">
-                <execute>
-                    blender
-                </execute>
-            </action>
-        </item>
-        <item label="Screencast">
-            <action name="Execute">
-                <execute>
-                    kazam
-                </execute>
-            </action>
-        </item>
+            <menu id="media-production-video" label="Video">
+                <item label="Blender">
+                    <action name="Execute">
+                        <execute>
+                            blender
+                        </execute>
+                    </action>
+                </item>           
+                <item label="Screencast">
+                    <action name="Execute">
+                        <execute>
+                            kazam
+                        </execute>
+                    </action>
+                </item>
+            </menu>
+
+            <separator />
+            
+            <item label="GIMP">
+                <action name="Execute">
+                    <execute>
+                        gimp
+                    </execute>
+                </action>
+            </item>
+            <item label="Burner">
+                <action name="Execute">
+                    <execute>
+                        xfburn
+                    </execute>
+                </action>
+            </item>
+        </menu>
     </menu>
 
     <separator />

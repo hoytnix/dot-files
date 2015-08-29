@@ -1,6 +1,15 @@
 Dot Files
 ---------
 
+## Install:
+
+su
+apt-get install openbox 
+apt-get install conky nitrogen tint2 arandr
+apt-get install gmrun terminator git 
+
+## Configuration:
+
 Weather:
 
 Move `run.py` to /opt/weather/ and add the following line to crontab:

@@ -61,8 +61,10 @@ xfce4-power-manager &
 
 ## Turn on/off system beep
 xset b off &
+xset -dpms s off & 
 
 # Autorun Programs
 (sleep 30s && icedove) &
 (sleep 60s && skype) &
 (sleep 90s && conky) &
+(sleep 120s && deluge) &
