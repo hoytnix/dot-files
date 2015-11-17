@@ -5,8 +5,9 @@ Admin:
 ------
 
     su
-    apt-get install git
-    git clone https://github.com/pr0xmeh/dot.git
+    
+    wget https://github.com/pr0xmeh/dot/archive/v1.0.tar.gz
+    tar -zxvf v1.0.tar.gz
     cd dot
 
     # Build tools
@@ -72,7 +73,7 @@ Utilities:
 
 Networking:
 
-    apt-get install openssh-server filezilla deluge rsync slurm 
+    apt-get install openssh-server git filezilla deluge rsync slurm 
 
 File system:
 
