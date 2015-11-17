@@ -7,7 +7,7 @@ Admin:
     su
     
     wget https://github.com/pr0xmeh/dot/releases/download/v1.0/dot-1.0.0.tar.gz
-    tar -zxvf v1.0.tar.gz
+    tar -zxvf dot-1.0.0.tar.gz
     cd dot
 
     # Build tools
