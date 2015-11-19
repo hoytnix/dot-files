@@ -91,7 +91,7 @@ Media:
 
 Audio:
 
-    apt-get install audacity lmms soundconverter
+    apt-get install audacity lmms soundconverter kid3
 
 Video:
 
@@ -100,6 +100,10 @@ Video:
 DVD:
 
     apt-get install devede xfburn asunder
+
+youtube-dl:
+
+Get download instructions from the [official webpage](https://rg3.github.io/youtube-dl/download.html), there isn't a reliable way to download the latest version.
 
 
 
