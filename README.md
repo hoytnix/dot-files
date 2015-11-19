@@ -153,8 +153,14 @@ Images:
 
 Node:
 -----
-
+    
+    # Install the Node Package Manager.
     apt-get install npm
+
+    # Update it.
+    npm cache clean -f
+    npm install -g n
+    n stable
 
 Packages:
 
