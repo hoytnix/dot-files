@@ -21,6 +21,7 @@ Sudo:
 Openbox:
     
     apt-get install openbox
+
     cp -r openbox ~/.config
     cp ./debian/usr/bin/cb-aerosnap /usr/bin
     cp ./debian/usr/bin/ob-exit /usr/bin
@@ -30,21 +31,27 @@ Openbox:
 Tint2:
     
     apt-get install tint2
+
     cp -r tint2 ~/.config
     cp ./debian/usr/bin/tint2restart /usr/bin
     chmod +x /usr/bin/tint2restart
 
 Conky:
-
+    
+    # Install.
     apt-get install conky
+
+    # Configure.
     cp ./conky/conkyrc ~/.conkyrc
 
-    # Weather
+    # Weather.
     mkdir /opt/weather
     chown me /opt/weather
     cp ./debian/opt/weather/run.py /opt/weather
 
+    # Cronjob.
     crontab -e
+    
     */15 * * * * /usr/bin/python3.4 /opt/weather/run.py
 
 Desktop:
@@ -52,20 +59,28 @@ Desktop:
     apt-get install arandr nitrogen compton
 
 Audio:
-
+    
+    # Sound control.
     apt-get install pavucontrol
 
-    # pnmixer
+    
+    # pnmixer - install dependencies;
     apt-get install glib2.0 intltool libx11-dev libasound2-dev libgtk-3-dev
 
-    cd ~/bin
+    # download;
     wget https://github.com/nicklan/pnmixer/releases/download/v0.6/pnmixer-0.6.1.tar.gz
     tar -zxvf pnmixer-0.6.1.tar.gz
+    
+    # install;
     cd pnmixer-0.6.1
-
     ./autogen.sh
     make
     make install
+
+    # clean up.
+    cd ../
+    rm -R pnmixer-0.6.1
+    rm pnmixer-0.6.1.tar.gz
 
 
 Utilities:
