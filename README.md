@@ -13,11 +13,12 @@ Usage:
 Setup should only take a few minutes aside from download times, enjoy!
 
 
-
 Admin:
 ------
 
     su
+    apt-get update
+    apt-get upgrade
     
     wget https://github.com/pr0xmeh/dot/releases/download/v1.0/dot-1.0.0.tar.gz
     tar -zxvf dot-1.0.0.tar.gz
@@ -36,7 +37,7 @@ Openbox:
     
     apt-get install openbox
 
-    cp -r openbox ~/.config
+    $ cp -r openbox /home/me/.config
     cp ./debian/usr/bin/cb-aerosnap /usr/bin
     cp ./debian/usr/bin/ob-exit /usr/bin
     chmod +x /usr/bin/cb-aerosnap
@@ -46,9 +47,14 @@ Tint2:
     
     apt-get install tint2
 
-    cp -r tint2 ~/.config
+    $ cp -r tint2 /home/me/.config
     cp ./debian/usr/bin/tint2restart /usr/bin
     chmod +x /usr/bin/tint2restart
+
+Compton:
+    
+    # Edit /openbox/autostart and replace johhny with your username.
+    $ cp -r compton /home/me/.config
 
 Conky:
     
@@ -100,6 +106,10 @@ Audio:
 Utilities:
 ----------
 
+Admin:
+
+    apt-get install gdebi gksu gmrun
+
 Networking:
 
     apt-get install openssh-server git filezilla deluge rsync slurm 
@@ -110,7 +120,7 @@ File system:
 
 Desktop:
 
-    apt-get install htop terminator xdotool wmctrl shutter
+    apt-get install htop terminator xdotool wmctrl shutter alarm-clock
 
 
 Media:

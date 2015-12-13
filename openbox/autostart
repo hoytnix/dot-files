@@ -18,7 +18,7 @@
 ## Have fun & happy CrunchBangin'! :)
 
 ## GNOME PolicyKit and Keyring
-eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+#eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
 ## Set root window colour
 #hsetroot -solid "#2E3436" &
@@ -30,27 +30,19 @@ eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 ## 4. tint2 panel
 (\
 nitrogen --restore && \
-compton -b --config /home/johnny/.config/compton.conf && \
+compton -b --config /home/jojo/.config/compton.conf && \
 sleep 2s && \
 tint2 \
 ) &
 
 ## Volume control for systray
-(sleep 2s && pnmixer) &
+#(sleep 2s && pnmixer) &
 
 ## Volume keys daemon
-xfce4-volumed &
+#xfce4-volumed &
 
 ## Enable power management
-xfce4-power-manager &
-
-## Detect and configure touchpad. See 'man synclient' for more info.
-#if egrep -iq 'touchpad' /proc/bus/input/devices; then
-#    synclient VertEdgeScroll=1 TapButton1=1 &
-#fi
-
-## Start xscreensaver
-#xscreensaver -no-splash &
+#xfce4-power-manager &
 
 ## Start Clipboard manager
 #(sleep 3s && clipit) &
@@ -64,7 +56,8 @@ xset b off &
 xset -dpms s off & 
 
 # Autorun Programs
-(sleep 30s && icedove) &
-(sleep 60s && skype) &
-(sleep 90s && conky) &
-(sleep 120s && deluge) &
+(sleep 1s && conky) &
+(sleep 1s && pnmixer) &
+#(sleep 30s && icedove) &
+#(sleep 60s && skype) &
+#(sleep 120s && deluge) &

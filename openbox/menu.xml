@@ -20,7 +20,7 @@
     <item label="Terminal">
         <action name="Execute">
             <execute>
-                x-terminal-emulator
+                terminator
             </execute>
         </action>
     </item>
@@ -59,10 +59,17 @@
     </menu>
 
     <menu id="dev" label="Development">
+        <item label="Atom">
+            <action name="Execute">
+                <execute>
+                    atom
+                </execute>
+            </action>
+        </item>
         <item label="Sublime Text">
             <action name="Execute">
                 <execute>
-                    subl
+                    subl3
                 </execute>
             </action>
         </item>
@@ -80,7 +87,7 @@
         <item label="Music">
             <action name="Execute">
                 <execute>
-                    /home/johnny/bin/deadbeef-0.6.2/deadbeef
+                    deadbeef
                 </execute>
             </action>
         </item>
@@ -115,7 +122,7 @@
                         lmms
                     </execute>
                 </action>
-            </item> 
+            </item>
             <item label="Converter">
                 <action name="Execute">
                     <execute>
@@ -132,7 +139,7 @@
                         blender
                     </execute>
                 </action>
-            </item>           
+            </item>
             <item label="Screencast">
                 <action name="Execute">
                     <execute>
@@ -172,7 +179,7 @@
                 </action>
             </item>
         </menu>
-            
+
     </menu>
 
     <separator />
@@ -200,6 +207,14 @@
             </item>
         </menu>
 
+        <item label="XFCE4 Settings">
+            <action name="Execute">
+                <execute>
+                    xfce4-settings-manager
+                </execute>
+            </action>
+        </item>
+
         <item label="Tint2 Restart">
             <action name="Execute">
                 <execute>
@@ -215,7 +230,7 @@
             </action>
         </item>
     </menu>
- 
+
     <separator />
 
     <item label="Exit">

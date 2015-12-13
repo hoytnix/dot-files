@@ -1,0 +1,37 @@
+{
+    "compton": [
+        {
+            "remote": "compton.conf",
+            "local": "~/.config/compton.conf"
+        }
+    ],
+
+    "conky": [
+        {
+            "remote": "conkyrc",
+            "local": "~/.conkyrc"
+        }
+    ],
+
+    "openbox": [
+        {
+            "remote": "autostart",
+            "local": "~/.config/openbox/autostart"
+        },
+        {
+            "remote": "menu.xml",
+            "local": "~/.config/openbox/menu.xml"
+        },
+        {
+            "remote": "rc.xml",
+            "local": "~/.config/openbox/rc.xml"
+        }
+    ],
+
+    "tint2": [
+        {
+            "remote": "tint2rc",
+            "local": "~/.config/tint2/tint2rc"
+        }
+    ]
+}
