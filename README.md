@@ -16,7 +16,7 @@ Setup should only take a few minutes aside from download times, enjoy!
 Package Installation:
 =====================
 
-(Now 421% less characters thanks to [Arch Linux](https://archlinux.org)!)
+(Now 441% less characters thanks to [Arch Linux](https://archlinux.org)!)
 
 `pacman -S $(< pkglist.txt)`
 
