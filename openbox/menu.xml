@@ -59,17 +59,17 @@
     </menu>
 
     <menu id="dev" label="Development">
-        <item label="Atom">
-            <action name="Execute">
-                <execute>
-                    atom
-                </execute>
-            </action>
-        </item>
         <item label="Sublime Text">
             <action name="Execute">
                 <execute>
                     subl3
+                </execute>
+            </action>
+        </item>
+        <item label="Atom">
+            <action name="Execute">
+                <execute>
+                    atom
                 </execute>
             </action>
         </item>
