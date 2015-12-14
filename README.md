@@ -3,7 +3,7 @@ Dot Files
 
 
 Package Installation:
-=====================
+---------------------
 
 (Now [10,966% less characters](https://github.com/pr0xmeh/dot/commit/c64b44db166c3db8f432a388e9a97deba0815ccb) thanks to [Arch Linux](https://archlinux.org)!)
 
@@ -12,17 +12,23 @@ Package Installation:
 
 
 Openbox Commands:
-=================
+-----------------
+
+Openbox:
 
 `Super+Space`: Openbox menu.
 
-`PrtSc`: Screenshot: select a portion of the screen.
+Screenshots:
 
-`Alt+PrnSc`: Screenshot: full-screen.
+`PrtSc`: select a portion of the screen.
 
-`Ctrl+PrnSc`: Screenshot: active window.
+`Alt+PrnSc`: full-screen.
 
-`Alt+Ctrl+PrnSc`: Screenshot: select a window.
+`Ctrl+PrnSc`: active window.
+
+`Alt+Ctrl+PrnSc`: select a window.
+
+Aerosnap:
 
 `Super+DirectionalKey`: Resize window.
 
