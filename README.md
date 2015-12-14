@@ -2,21 +2,10 @@ Dot Files
 =========
 
 
-Usage:
-------
-
-1) `apt-get` lines are followed by an empty new-line to prevent the install from aborting.
-2) Lines requiring some form of user-input are preceded with a `$`. For example, the text to paste to the cronjob editor so it won't be accidentally copy-pasted on setup; and `chown me ...` because the user needs to change `me` to their own username.
-3) Everything is expected to be run as super-user. (It's the first line.)
-4) Everything is copy-pastable unless otherwise noted.
-
-Setup should only take a few minutes aside from download times, enjoy!
-
-
 Package Installation:
 =====================
 
-(Now 441% less characters thanks to [Arch Linux](https://archlinux.org)!)
+(Now [441% less characters](https://github.com/pr0xmeh/dot/commit/c64b44db166c3db8f432a388e9a97deba0815ccb) thanks to [Arch Linux](https://archlinux.org)!)
 
 `pacman -S $(< pkglist.txt)`
 

@@ -36,8 +36,6 @@ filezilla
 findutils
 flex
 gawk
-gcc
-gcc-libs
 gdm
 gettext
 gimp
@@ -106,6 +104,7 @@ sane
 sed
 shadow
 shutter
+skype
 smplayer
 soundconverter
 srm
