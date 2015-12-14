@@ -16,7 +16,13 @@ Openbox Commands:
 
 `Super+Space`: Openbox menu.
 
-`PrtSc`: Screenshot.
+`PrtSc`: Screenshot: select a portion of the screen.
+
+`Alt+PrnSc`: Screenshot: full-screen.
+
+`Ctrl+PrnSc`: Screenshot: active window.
+
+`Alt+Ctrl+PrnSc`: Screenshot: select a window.
 
 `Super+DirectionalKey`: Resize window.
 

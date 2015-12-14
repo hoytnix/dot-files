@@ -82,6 +82,7 @@ net-tools
 netctl
 nitrogen
 npm
+obconf
 openbox
 openssh
 pacman
