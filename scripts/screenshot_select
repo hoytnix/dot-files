@@ -1,0 +1,7 @@
+#!/bin/bash
+# ----------
+# https://bugs.archlinux.org/task/41357#comment126225
+
+killall shutter
+shutter --select --no_session --min_at_startup
+exit 0

@@ -304,7 +304,7 @@
         </keybind>
         <keybind key="Print">
             <action name="Execute">
-                <command>shutter -s</command>
+                <command>screenshot_select</command>
             </action>
         </keybind>
         <keybind key="A-Print">
