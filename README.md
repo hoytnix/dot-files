@@ -5,7 +5,7 @@ Dot Files
 Package Installation:
 =====================
 
-(Now [441% less characters](https://github.com/pr0xmeh/dot/commit/c64b44db166c3db8f432a388e9a97deba0815ccb) thanks to [Arch Linux](https://archlinux.org)!)
+(Now [10,966% less characters](https://github.com/pr0xmeh/dot/commit/c64b44db166c3db8f432a388e9a97deba0815ccb) thanks to [Arch Linux](https://archlinux.org)!)
 
 `pacman -S $(< pkglist.txt)`
 
