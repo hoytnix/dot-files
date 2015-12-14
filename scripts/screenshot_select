@@ -3,5 +3,27 @@
 # https://bugs.archlinux.org/task/41357#comment126225
 
 killall shutter
-shutter --select --no_session --min_at_startup
+
+case $1 in
+    "-s")
+        echo "Select portion of screen."
+        shutter --select --no_session --min_at_startup --exit_after_capture
+        ;;
+    "-f")
+        echo "Full-screen."
+        shutter --full --no_session --min_at_startup --exit_after_capture
+        ;;
+    "-w")
+        echo "Last-active window."
+        shutter --active --no_session --min_at_startup --exit_after_capture
+        ;;
+    "-ws")
+        echo "Select a window."
+        shutter --window --no_session --min_at_startup --exit_after_capture
+        ;;
+    *)
+        echo "Unkown command."
+        ;;
+esac
+
 exit 0
