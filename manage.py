@@ -53,13 +53,19 @@ def update_pkglist():
     exec_me(cmd)
 
 def git_push():
+    print('\n') # Hack.
+        
+    cmd = []
+    cmd.append('cd {dir}'.format(dir=abs_current))
+    cmd.append('git add -A')
+    cmd.append('git status')
+    exec_me(cmd)
+
     print('\nEnter anything to say yes, otherwise press enter.')
     if input('Push to Git? ') != '':
-        cmd = []
-        cmd.append('cd {dir}'.format(dir=abs_current))
-        cmd.append('git status')
-        cmd.append('git add -A')
-        cmd.append('git commit -m "Wow such commit!"')
+        msg = input('\nCommit message: ')
+
+        cmd.append('git commit -m "{msg}"'.format(msg=msg))
         cmd.append('git push')
         exec_me(cmd)
 
