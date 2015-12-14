@@ -34,7 +34,7 @@ def file_diffs():
 
             if cs_remote != cs_local:
                 print('Found: {package}/{file}'.format(package=package, file=remote))
-                #shutil.copy(src=fp_local, dst=fp_remote)
+                shutil.copy(src=fp_local, dst=fp_remote)
 
 def exec_me(args):
     i = 0
@@ -46,24 +46,32 @@ def exec_me(args):
             cmd += ' && '
     subprocess.call(cmd, shell=True)
 
-def main():
-    # 1. Check files for differences.
-    file_diffs()
-
-    # 2. Update package list.
+def update_pkglist():
     cmd = []
     cmd.append('cd {dir}'.format(dir=abs_current))
     cmd.append('pacman -Qqen > pkglist.txt')
     exec_me(cmd)
 
+def git_push():
+    print('\nEnter anything to say yes, otherwise press enter.')
+    if input('Push to Git? ') != '':
+        cmd = []
+        cmd.append('cd {dir}'.format(dir=abs_current))
+        cmd.append('git status')
+        cmd.append('git add -A')
+        cmd.append('git commit -m "Wow such commit!"')
+        cmd.append('git push')
+        exec_me(cmd)
+
+def main():
+    # 1. Check files for differences.
+    file_diffs()
+
+    # 2. Update package list.
+    update_pkglist()
+
     # 3. Push to git.
-    cmd = []
-    cmd.append('cd {dir}'.format(dir=abs_current))
-    cmd.append('git status')
-    cmd.append('git add -A')
-    cmd.append('git commit -m "Wow such commit!"')
-    cmd.append('git push')
-    exec_me(cmd)
+    git_push()
 
 if __name__ == '__main__':
     main()

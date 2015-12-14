@@ -365,6 +365,121 @@
         </action>
     </keybind>
 
+        <!-- Keybindings for running applications -->
+        <keybind key="A-F2">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Run Program</name>
+                </startupnotify>
+                <command>gmrun</command>
+            </action>
+        </keybind>
+        <keybind key="A-F3">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>dmenu-bind</name>
+                </startupnotify>
+                <command>~/.config/dmenu/dmenu-bind.sh</command>
+            </action>
+        </keybind>
+        <keybind key="W-f">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>thunar</name>
+                </startupnotify>
+                <command>thunar</command>
+            </action>
+        </keybind>
+        <keybind key="W-t">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Terminal</name>
+                </startupnotify>
+                <command>terminator</command>
+            </action>
+        </keybind>
+        <keybind key="W-w">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Web Browser</name>
+                </startupnotify>
+                <command>x-www-browser</command>
+            </action>
+        </keybind>
+        <keybind key="W-l">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Lock screen</name>
+                </startupnotify>
+                <command>cb-lock</command>
+            </action>
+        </keybind>
+        <keybind key="W-e">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Editor</name>
+                </startupnotify>
+                <command>geany</command>
+            </action>
+        </keybind>
+        <keybind key="W-m">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Mediaplayer</name>
+                </startupnotify>
+                <command>vlc</command>
+            </action>
+        </keybind>
+        <keybind key="W-h">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>htop</name>
+                </startupnotify>
+                <command>terminator --command=&quot;htop&quot;</command>
+            </action>
+        </keybind>
+        <keybind key="W-v">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Volume</name>
+                </startupnotify>
+                <command>pavucontrol</command>
+            </action>
+        </keybind>
+        <keybind key="W-x">
+            <action name="Execute">
+                <startupnotify>
+                    <enabled>true</enabled>
+                    <name>Logout</name>
+                </startupnotify>
+                <command>cb-exit</command>
+            </action>
+        </keybind>
+        <keybind key="W-Tab">
+            <action name="ShowMenu">
+                <menu>client-list-combined-menu</menu>
+            </action>
+        </keybind>
+        <keybind key="W-space">
+            <action name="ShowMenu">
+                <menu>root-menu</menu>
+            </action>
+        </keybind>
+        <keybind key="A-C-q">
+            <action name="ShowMenu">
+                <menu>root-menu</menu>
+            </action>
+        </keybind>
         <!-- A bit of tiling -->
         <keybind key="W-Right">
             <action name="GrowToEdgeEast"/>

@@ -201,12 +201,6 @@
             </action>
         </item>
 
-        <menu id="ob" label="Openbox">
-            <item label="Re-Configure">
-                <action name="Reconfigure" />
-            </item>
-        </menu>
-
         <item label="XFCE4 Settings">
             <action name="Execute">
                 <execute>
@@ -215,17 +209,14 @@
             </action>
         </item>
 
+        <item label="Reconfigure Openbox">
+            <action name="Reconfigure" />
+        </item>
+
         <item label="Tint2 Restart">
             <action name="Execute">
                 <execute>
-                    gksu tint2restart
-                </execute>
-            </action>
-        </item>
-        <item label="Gparted">
-            <action name="Execute">
-                <execute>
-                    gksu gparted
+                    tint2restart
                 </execute>
             </action>
         </item>
