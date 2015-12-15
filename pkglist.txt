@@ -116,6 +116,7 @@ tar
 terminator
 texinfo
 thunar
+thunderbird
 tint2
 tk
 transcode

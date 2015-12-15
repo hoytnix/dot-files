@@ -1,12 +1,16 @@
+## Desktop.
 (\
 nitrogen --restore && \
 compton -b --config /home/jojo/.config/compton.conf && \
-sleep 2s && \
+sleep 2s && \ # Allow compton to start-up.
 tint2 && \
 conky && \
 pnmixer \
 ) &
 
-## Turn on/off system beep
+## Turn off annoying system beep.
 xset b off &
 xset -dpms s off & 
+
+## Desktop applications.
+thunderbird

@@ -31,6 +31,13 @@
             </execute>
         </action>
     </item>
+    <item label="Thunderbird">
+        <action name="Execute">
+            <execute>
+                thunderbird
+            </execute>
+        </action>
+    </item>
 
     <separator />
 
