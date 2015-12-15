@@ -99,16 +99,23 @@
     <keyboard>
         <chainQuitKey>C-g</chainQuitKey>
 
+        <!-- Openbox menu. -->
+        <keybind key="W-space">
+            <action name="ShowMenu">
+                <menu>root-menu</menu>
+            </action>
+        </keybind>
+
         <!-- Keybindings for brightness control -->
         <keybind key="XF86MonBrightnessUp">
-                 <action name="Execute">
-                     <command>bl_up</command>
-                 </action>
+            <action name="Execute">
+                <command>bl_up</command>
+            </action>
         </keybind>
         <keybind key="XF86MonBrightnessDown">
-                 <action name="Execute">
-                     <command>bl_down</command>
-                 </action>
+            <action name="Execute">
+                <command>bl_down</command>
+            </action>
         </keybind>
         
         <!-- Keybindings for audio control -->
