@@ -234,6 +234,9 @@
             </item>
             <item label="Exit">
                 <action name="Execute">
+                    <prompt>
+                        Are you sure you'd like to exit?
+                    </prompt>
                     <execute>
                         openbox --exit
                     </execute>
