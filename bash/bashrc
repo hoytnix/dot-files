@@ -1,0 +1,21 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+PS1='[\u@\h \W]\$ '
+
+# sudo
+alias s="sudo"
+
+# ls
+alias ls='ls --color=always'
+
+# find
+alias f="find -P ~/ -name"
+
+# pacman
+alias pS="sudo pacman -S"
+alias pR="sudo pacman -R"
+alias pSyu="sudo pacman -Syu"

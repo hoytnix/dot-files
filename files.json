@@ -1,4 +1,11 @@
 {
+    "bash": [
+        {
+            "remote": "bashrc",
+            "local": "~/.bashrc"
+        }
+    ],
+
     "compton": [
         {
             "remote": "compton.conf",

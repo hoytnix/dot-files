@@ -29,6 +29,7 @@ diffutils
 dvd+rw-tools
 e2fsprogs
 emovix
+epdfview
 fakeroot
 fbreader
 file
