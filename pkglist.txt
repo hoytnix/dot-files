@@ -6,6 +6,7 @@ audacity
 autoconf
 automake
 bash
+beanshell2
 binutils
 bison
 blender
@@ -13,6 +14,7 @@ btrfs-progs
 bzip2
 cdrdao
 chromium
+coin-or-mp
 conky
 coreutils
 cronie
@@ -59,9 +61,14 @@ i3status
 inetutils
 iproute2
 iputils
+jdk7-openjdk
 jfsutils
+jre7-openjdk
 k3b
 less
+libmspack
+libmythes
+libreoffice-fresh
 licenses
 linux
 linux-headers
@@ -85,6 +92,7 @@ npm
 obconf
 openbox
 openssh
+optipng
 pacman
 patch
 pavucontrol
@@ -95,6 +103,7 @@ perl-file-mimeinfo
 pkg-config
 procps-ng
 psmisc
+pstoedit
 python-pip
 python2-pyqt4
 reiserfsprogs
@@ -121,12 +130,14 @@ tint2
 tk
 transcode
 ufw-extras
+unixodbc
 unrar
 usbutils
 util-linux
 vde2
 vi
 viewnior
+vigra
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
