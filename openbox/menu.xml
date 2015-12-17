@@ -228,22 +228,41 @@
     <separator />
 
     <menu id="admin" label="Admin">
-        <item label="arandr">
-            <action name="Execute">
-                <execute>
-                    arandr
-                </execute>
-            </action>
-        </item>
-
-        <item label="Wallpapers">
-            <action name="Execute">
-                <execute>
-                    nitrogen
-                </execute>
-            </action>
-        </item>
-
+        <menu id="admin-openbox" label="Openbox">
+            <item label="Reconfigure">
+                <action name="Reconfigure" />
+            </item>
+            <item label="Exit">
+                <action name="Execute">
+                    <execute>
+                        openbox --exit
+                    </execute>
+                </action>
+            </item>
+        </menu>
+        <menu id="admin-desktop" label="Desktop">
+            <item label="arandr">
+                <action name="Execute">
+                    <execute>
+                        arandr
+                    </execute>
+                </action>
+            </item>
+            <item label="Wallpapers">
+                <action name="Execute">
+                    <execute>
+                        nitrogen
+                    </execute>
+                </action>
+            </item>
+            <item label="Restart Tint2">
+                <action name="Execute">
+                    <execute>
+                        tint2restart
+                    </execute>
+                </action>
+            </item>
+        </menu>
         <item label="XFCE4 Settings">
             <action name="Execute">
                 <execute>
@@ -251,29 +270,6 @@
                 </execute>
             </action>
         </item>
-
-        <item label="Reconfigure Openbox">
-            <action name="Reconfigure" />
-        </item>
-
-        <item label="Tint2 Restart">
-            <action name="Execute">
-                <execute>
-                    tint2restart
-                </execute>
-            </action>
-        </item>
     </menu>
-
-    <separator />
-
-    <item label="Exit">
-        <action name="Execute">
-            <execute>
-                ob-exit
-            </execute>
-        </action>
-    </item>
 </menu>
-
 </openbox_menu>
