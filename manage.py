@@ -11,7 +11,7 @@ def file_checksum(fp):
 
 def file_diffs():
     # Get database.
-    with open('files.json', 'r') as f:
+    with open('packages.json', 'r') as f:
         db = json.load(f)
 
     # UI.
