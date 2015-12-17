@@ -4,7 +4,8 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-PS1='[\u@\h \W]\$ '
+PS1="#\u@\h:\w:\[\033[01;32m\][\${PIPESTATUS[@]}]\[\033[00m\]\$ "
+#PS1='[\u@\h \W]\$ '
 
 # exports
 export EDITOR=nano
