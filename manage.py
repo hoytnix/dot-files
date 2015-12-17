@@ -6,8 +6,11 @@ import hashlib, json, os.path, shutil, subprocess
 abs_current = os.path.dirname(os.path.realpath(__file__))
 
 def file_checksum(fp):
-    with open(fp, 'rb') as f:
-        return hashlib.md5(f.read()).hexdigest()
+    try:
+        with open(fp, 'rb') as f:
+            return hashlib.md5(f.read()).hexdigest()
+    except: # File does not exist yet.
+        return ""
 
 def file_diffs():
     # Get database.
@@ -34,7 +37,7 @@ def file_diffs():
 
             if cs_remote != cs_local:
                 print('Found: {package}/{file}'.format(package=package, file=remote))
-                shutil.copy(src=fp_local, dst=fp_remote)
+                shutil.copyfile(src=fp_local, dst=fp_remote)
 
 def exec_me(args):
     i = 0

@@ -6,6 +6,10 @@
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
+# exports
+export EDITOR=nano
+export TERM=terminator
+
 # sudo
 alias s="sudo"
 

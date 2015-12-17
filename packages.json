@@ -35,6 +35,13 @@
         }
     ],
 
+    "terminator": [
+        {
+            "remote": "config",
+            "local": "~/.config/terminator/config"
+        }
+    ],
+
     "tint2": [
         {
             "remote": "tint2rc",
@@ -42,10 +49,14 @@
         }
     ],
 
-    "terminator": [
+    "weather": [
         {
-            "remote": "config",
-            "local": "~/.config/terminator/config"
+            "remote": "run.py",
+            "local": "/opt/weather/run.py"
+        },
+        {
+            "remote": "weather.service",
+            "local": "/usr/lib/systemd/system/weather.service"
         }
     ]
 }

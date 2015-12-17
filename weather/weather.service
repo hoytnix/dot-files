@@ -1,0 +1,15 @@
+# My Weather App
+#
+# Checks the weather in 15-minute intervals.
+# Runs a Python-script, which updates a text-file, which is cat'd by Conky. 
+#
+# : )
+#
+
+[Unit]
+Description=Executes every 900 seconds (15-minutes)
+
+[Service]
+ExecStart=/usr/bin/python /opt/weather/run.py
+Restart=always
+RestartSec=900
