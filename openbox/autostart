@@ -1,11 +1,15 @@
+# xrandr
+(\
+xrandr --newmode "1920x1080R"  138.50  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync && \
+xrandr --addmode DP-1 1920x1080R && \
+xrandr --output HDMI-1 --off --output HDMI-2 --off --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --mode 1920x1080R --pos 1920x0 --rotate normal -r 83.0 \
+) &
+
 ## Desktop.
 (\
 nitrogen --restore && \
 compton -b --config /home/jojo/.config/compton.conf && \
-sleep 2s && \ # Allow compton to start-up.
-tint2 && \
-conky && \
-pnmixer \
+tint2 \
 ) &
 
 ## Turn off annoying system beep.
@@ -13,4 +17,6 @@ xset b off &
 xset -dpms s off & 
 
 ## Desktop applications.
-thunderbird
+conky &
+pnmixer &
+thunderbird &

@@ -37,6 +37,7 @@ file-roller
 filesystem
 filezilla
 findutils
+firefox
 flex
 gawk
 gdm
