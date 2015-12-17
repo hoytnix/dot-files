@@ -62,7 +62,8 @@ def git_push():
     exec_me(cmd)
 
     print('\nEnter anything to say yes, otherwise press enter.')
-    if input('Push to Git? ') != '':
+    answer = input('Push to Git? ') 
+    if answer != '' and answer.lower() != 'n':
         msg = input('\nCommit message: ')
 
         cmd.append('git commit -m "{msg}"'.format(msg=msg))
