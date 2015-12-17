@@ -31,48 +31,51 @@
             </execute>
         </action>
     </item>
-    <item label="Thunderbird">
-        <action name="Execute">
-            <execute>
-                thunderbird
-            </execute>
-        </action>
-    </item>
-    <menu id="office-menu" label="Office">
-        <item label="Spreadsheets">
-            <action name="Execute">
-                <execute>
-                    libreoffice --calc
-                </execute>
-            </action>
-        </item>
-        <item label="Writer">
-            <action name="Execute">
-                <execute>
-                    libreoffice --writer
-                </execute>
-            </action>
-        </item>
-        <item label="Presentation">
-            <action name="Execute">
-                <execute>
-                    libreoffice --impress
-                </execute>
-            </action>
-        </item>    
-        
-        <separator />
-        
-        <item label="LibreOffice">
-            <action name="Execute">
-                <execute>
-                    libreoffice
-                </execute>
-            </action>
-        </item>
-    </menu>
 
     <separator />
+
+    <menu id="utilities" label="Utilities">
+        <item label="Thunderbird">
+            <action name="Execute">
+                <execute>
+                    thunderbird
+                </execute>
+            </action>
+        </item>
+        <menu id="office-menu" label="Office">
+            <item label="Spreadsheets">
+                <action name="Execute">
+                    <execute>
+                        libreoffice --calc
+                    </execute>
+                </action>
+            </item>
+            <item label="Writer">
+                <action name="Execute">
+                    <execute>
+                        libreoffice --writer
+                    </execute>
+                </action>
+            </item>
+            <item label="Presentation">
+                <action name="Execute">
+                    <execute>
+                        libreoffice --impress
+                    </execute>
+                </action>
+            </item>    
+            
+            <separator />
+            
+            <item label="LibreOffice">
+                <action name="Execute">
+                    <execute>
+                        libreoffice
+                    </execute>
+                </action>
+            </item>
+        </menu>
+    </menu>
 
     <menu id="files" label="Files">
         <item label="File Manager">
