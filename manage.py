@@ -64,6 +64,7 @@ def git_push():
     cmd.append('git status')
     exec_me(cmd)
 
+    cmd = []
     print('\nEnter anything to say yes, otherwise press enter.')
     answer = input('Push to Git? ') 
     if answer != '' and answer.lower() != 'n':
@@ -71,7 +72,9 @@ def git_push():
 
         cmd.append('git commit -m "{msg}"'.format(msg=msg))
         cmd.append('git push')
-        exec_me(cmd)
+    else:
+        cmd.append('git reset HEAD')
+    exec_me(cmd)
 
 def main():
     # 1. Check files for differences.

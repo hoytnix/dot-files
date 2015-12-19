@@ -30,6 +30,7 @@ dvd+rw-tools
 e2fsprogs
 emovix
 epdfview
+f2fs-tools
 fakeroot
 fbreader
 file
@@ -47,6 +48,8 @@ git
 gksu
 glibc
 gmrun
+gpart
+gparted
 grep
 grub
 gsimplecal
@@ -85,12 +88,15 @@ man-pages
 mcomix
 mdadm
 mpv
+mtools
 nano
 ncdu
 net-tools
 netctl
+nilfs-utils
 nitrogen
 npm
+ntfs-3g
 obconf
 openbox
 openssh
