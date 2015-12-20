@@ -160,7 +160,7 @@
             <item label="Authoring">
                 <action name="Execute">
                     <execute>
-                        devede
+                        devede_ng.py
                     </execute>
                 </action>
             </item>
