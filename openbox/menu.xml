@@ -190,6 +190,23 @@
                 </execute>
             </action>
         </item>
+        <item label="Chromium">
+            <action name="Execute">
+                <execute>
+                    chromium
+                </execute>
+            </action>
+        </item>
+        <item label="Firefox">
+            <action name="Execute">
+                <execute>
+                    firefox
+                </execute>
+            </action>
+        </item>
+
+        <separator />
+
         <menu id="office-menu" label="Office">
             <item label="Spreadsheets">
                 <action name="Execute">
