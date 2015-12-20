@@ -20,6 +20,13 @@
         }
     ],
 
+    "nodejs": [
+        {
+            "remote": "npmrc",
+            "local": "~/.npmrc"
+        }
+    ],
+
     "openbox": [
         {
             "remote": "autostart",
