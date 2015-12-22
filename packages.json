@@ -22,6 +22,8 @@
 
     "openbox": "~/.config/openbox",
 
+    "scripts": "~/bin/scripts",
+
     "terminator": "~/.config/terminator",
 
     "tint2": "~/.config/tint2",

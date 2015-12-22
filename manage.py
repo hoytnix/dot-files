@@ -31,14 +31,18 @@ def file_diffs():
             package = os.path.expanduser(package)
             for dirpath, dirnames, filenames in os.walk(package):
                 for filename in filenames:
-                    fp_local  = os.path.join(package, filename)
-                    fp_remote = os.path.join(package_dir, filename)
+                    sub_package_dir = package_dir + dirpath.replace(package, '')
+                    if not os.path.exists(sub_package_dir):
+                        os.makedirs(sub_package_dir)
+
+                    fp_local  = os.path.join(dirpath, filename)
+                    fp_remote = os.path.join(sub_package_dir, filename)
 
                     cs_local  = file_checksum(fp=fp_local)
                     cs_remote = file_checksum(fp=fp_remote)
 
                     if cs_remote != cs_local:
-                        print('Found: {package}/{file}'.format(package=package_name, file=fp_remote))
+                        print('Found: {package}/{file}'.format(package=package_name, file=filename))
                         shutil.copyfile(src=fp_local, dst=fp_remote)
 
         # Manual package searching.

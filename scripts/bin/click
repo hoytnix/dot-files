@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+for i in `seq 1 5`; do
+  xdotool mousemove $1 $2 click 1 &
+  sleep 1.00
+done
