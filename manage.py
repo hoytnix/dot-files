@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 ''' Python 3.5 '''
 
-import hashlib, json, os.path, shutil, subprocess
+import hashlib, json, os, shutil, subprocess
 
 abs_current = os.path.dirname(os.path.realpath(__file__))
 
@@ -21,23 +21,41 @@ def file_diffs():
     print('Checking files for differences...\n')
 
     # Iterate database.
-    for package in db:
-        files = db[package]
-        package_dir = os.path.join(abs_current, package)
+    for package_name in db:
+        # Package variables.
+        package_dir = os.path.join(abs_current, package_name)
+        package = db[package_name]
         
-        for fps in files:
-            local  = fps['local']
-            remote = fps['remote']
+        # Recursive (lazy) package searching.
+        if type(package) == str:
+            package = os.path.expanduser(package)
+            for dirpath, dirnames, filenames in os.walk(package):
+                for filename in filenames:
+                    fp_local  = os.path.join(package, filename)
+                    fp_remote = os.path.join(package_dir, filename)
 
-            fp_local  = os.path.expanduser(local)
-            fp_remote = os.path.join(package_dir, remote) 
+                    cs_local  = file_checksum(fp=fp_local)
+                    cs_remote = file_checksum(fp=fp_remote)
 
-            cs_local  = file_checksum(fp=fp_local)
-            cs_remote = file_checksum(fp=fp_remote)
+                    if cs_remote != cs_local:
+                        print('Found: {package}/{file}'.format(package=package_name, file=fp_remote))
+                        shutil.copyfile(src=fp_local, dst=fp_remote)
 
-            if cs_remote != cs_local:
-                print('Found: {package}/{file}'.format(package=package, file=remote))
-                shutil.copyfile(src=fp_local, dst=fp_remote)
+        # Manual package searching.
+        if type(package) == list:
+            for fp in package:
+                fn_local  = fp['local']
+                fn_remote = fp['remote']
+
+                fp_local  = os.path.expanduser(fn_local)
+                fp_remote = os.path.join(package_dir, fn_remote) 
+
+                cs_local  = file_checksum(fp=fp_local)
+                cs_remote = file_checksum(fp=fp_remote)
+
+                if cs_remote != cs_local:
+                    print('Found: {package}/{file}'.format(package=package_name, file=remote))
+                    shutil.copyfile(src=fp_local, dst=fp_remote)
 
 def exec_me(args):
     i = 0

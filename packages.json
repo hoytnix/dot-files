@@ -20,34 +20,11 @@
         }
     ],
 
-    "openbox": [
-        {
-            "remote": "autostart",
-            "local": "~/.config/openbox/autostart"
-        },
-        {
-            "remote": "menu.xml",
-            "local": "~/.config/openbox/menu.xml"
-        },
-        {
-            "remote": "rc.xml",
-            "local": "~/.config/openbox/rc.xml"
-        }
-    ],
+    "openbox": "~/.config/openbox",
 
-    "terminator": [
-        {
-            "remote": "config",
-            "local": "~/.config/terminator/config"
-        }
-    ],
+    "terminator": "~/.config/terminator",
 
-    "tint2": [
-        {
-            "remote": "tint2rc",
-            "local": "~/.config/tint2/tint2rc"
-        }
-    ],
+    "tint2": "~/.config/tint2",
 
     "weather": [
         {
