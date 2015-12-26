@@ -1,0 +1,30 @@
+#!/bin/bash
+# ----------
+# http://askubuntu.com/questions/377438/
+
+find . -name "$1" -type f
+
+while true; do
+    read -p "Would you like to delete these files? [y/N] " yn
+    case $yn in
+        [Yy]*) 
+            read -p "Are you sure? [Anything to confirm, N to exit] " syn
+            case $syn in
+                [Nn]*)
+                    exit
+                    ;;
+                *)
+                    find . -name "$1" -type f -delete
+                    exit
+                    ;;
+            esac
+            exit
+            ;;
+        [Nn]*) 
+            exit
+            ;;
+        *) 
+            exit
+            ;;
+    esac
+done
