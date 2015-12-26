@@ -58,7 +58,7 @@ def file_diffs():
                 cs_remote = file_checksum(fp=fp_remote)
 
                 if cs_remote != cs_local:
-                    print('Found: {package}/{file}'.format(package=package_name, file=remote))
+                    print('Found: {package}/{file}'.format(package=package_name, file=fn_remote))
                     shutil.copyfile(src=fp_local, dst=fp_remote)
 
 def exec_me(args):
