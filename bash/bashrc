@@ -24,3 +24,6 @@ alias f="find -P ~/ -name"
 alias pS="sudo pacman -S"
 alias pR="sudo pacman -R"
 alias pSyu="sudo pacman -Syu"
+
+# file removal
+alias rmf="remove_files"
