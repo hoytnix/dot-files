@@ -41,6 +41,7 @@ findutils
 firefox
 flex
 gawk
+gcolor2
 gdm
 gettext
 gimp
@@ -137,6 +138,7 @@ thunderbird
 tint2
 tk
 transcode
+transset-df
 ufw-extras
 unixodbc
 unrar
@@ -156,6 +158,7 @@ wireless_tools
 wmctrl
 wpa_actiond
 wpa_supplicant
+xcompmgr
 xdotool
 xf86-input-synaptics
 xfburn

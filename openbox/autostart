@@ -20,3 +20,6 @@ xset -dpms s off &
 conky &
 pnmixer &
 thunderbird &
+
+## Conky
+transset-df .8 -n conky &
