@@ -6,7 +6,7 @@ own_window_colour 000000
 own_window yes
 own_window_class conky
 own_window_transparent no
-own_window_type normal 
+own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 default_color 00CC00

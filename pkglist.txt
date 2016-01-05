@@ -71,6 +71,7 @@ jdk7-openjdk
 jfsutils
 jre7-openjdk
 k3b
+kid3
 less
 libmspack
 libmythes
@@ -114,6 +115,7 @@ procps-ng
 psmisc
 pstoedit
 python-pip
+python-virtualenv
 python2-pyqt4
 reiserfsprogs
 remind
@@ -148,6 +150,7 @@ vde2
 vi
 viewnior
 vigra
+vim
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms

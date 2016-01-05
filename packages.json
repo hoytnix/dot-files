@@ -28,6 +28,17 @@
 
     "tint2": "~/.config/tint2",
 
+    "vim": [
+        {
+            "remote": "vimrc",
+            "local": "~/.vimrc"
+        },
+        {
+            "remote": "seahorse.vim",
+            "local": "~/.vim/colors/seahorse.vim"
+        }
+    ],
+
     "weather": [
         {
             "remote": "run.py",
