@@ -1,57 +1,39 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+set colorcolumn=80,70
+set encoding=utf-8
+set nu
+set pastetoggle=<F12> http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+set noswapfile
+set nobackup
 
-" set the runtime path to include Vundle and initialize
+" Vundle
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" insert or delete brackets, parens, quotes in pair
 Plugin 'jiangmiao/auto-pairs'
-" a Git wrapper so awesome, it should be illegal
 Plugin 'tpope/vim-fugitive'
-" A Sublime-like minimap
-Plugin 'severin-lemaignan/vim-minimap'
-" file-system explorer
 Plugin 'scrooloose/nerdtree'
-" PEP 8 Indents
 Plugin 'vim-scripts/indentpython.vim'
-" Syntax checking hacks
 Plugin 'scrooloose/syntastic'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'hdima/python-syntax'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'bling/vim-airline'
+Plugin 'mitsuhiko/vim-jinja'
+Plugin 'Valloric/YouCompleteMe' 
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-
-" Put your non-Plugin stuff after this line
+call vundle#end()
+filetype plugin indent on
+" End Vundle
 
 " Key-bindings
 map <C-c><C-c> :w<CR>
 
-" Autorun
-" autocmd vimenter * NERDTree
-
-" Settings
-set colorcolumn=80,70
-set encoding=utf-8
-set nu
+" NERDTree
+autocmd vimenter * NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Syntax Highlighting
@@ -69,5 +51,5 @@ au BufNewFile,BufRead *.py
     set autoindent
     set fileformat=unix
 
-" Whitespace is bad
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufNewFile,BufRead *.jinja2
+    set filetype=jinja
