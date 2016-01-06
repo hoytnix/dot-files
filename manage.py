@@ -25,7 +25,7 @@ def file_diffs():
         # Package variables.
         package_dir = os.path.join(abs_current, package_name)
         package = db[package_name]
-        
+
         # Recursive (lazy) package searching.
         if type(package) == str:
             package = os.path.expanduser(package)
@@ -42,7 +42,7 @@ def file_diffs():
                     cs_remote = file_checksum(fp=fp_remote)
 
                     if cs_remote != cs_local:
-                        print('Found: {package}/{file}'.format(package=package_name, file=filename))
+                        print('Found: {}/{}'.format(package_name, filename))
                         shutil.copyfile(src=fp_local, dst=fp_remote)
 
         # Manual package searching.
@@ -52,13 +52,13 @@ def file_diffs():
                 fn_remote = fp['remote']
 
                 fp_local  = os.path.expanduser(fn_local)
-                fp_remote = os.path.join(package_dir, fn_remote) 
+                fp_remote = os.path.join(package_dir, fn_remote)
 
                 cs_local  = file_checksum(fp=fp_local)
                 cs_remote = file_checksum(fp=fp_remote)
 
                 if cs_remote != cs_local:
-                    print('Found: {package}/{file}'.format(package=package_name, file=fn_remote))
+                    print('Found: {}/{}'.format(package_name, fn_remote))
                     shutil.copyfile(src=fp_local, dst=fp_remote)
 
 def exec_me(args):
@@ -79,7 +79,7 @@ def update_pkglist():
 
 def git_push():
     print('\n') # Hack.
-        
+
     cmd = []
     cmd.append('cd {dir}'.format(dir=abs_current))
     cmd.append('git add -A')
@@ -88,7 +88,7 @@ def git_push():
 
     cmd = []
     print('\nEnter anything to say yes, otherwise press enter.')
-    answer = input('Push to Git? ') 
+    answer = input('Push to Git? ')
     if answer != '' and answer.lower() != 'n':
         msg = input('\nCommit message: ')
 

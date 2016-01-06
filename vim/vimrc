@@ -1,13 +1,7 @@
 set nocompatible
-set colorcolumn=80,70
-set encoding=utf-8
-set nu
-set pastetoggle=<F12> http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
-set noswapfile
-set nobackup
+filetype off
 
 " Vundle
-filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -27,22 +21,35 @@ Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
-" End Vundle
+
+
+" Settings
+set colorcolumn=70,80
+set encoding=utf-8
+set nu
+set pastetoggle=<F12> "http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+set noswapfile
+set nobackup
+set clipboard=unnamedplus
+set undolevels=1000
 
 " Key-bindings
 map <C-c><C-c> :w<CR>
 
+
 " NERDTree
 autocmd vimenter * NERDTree
-let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
+
 
 " Syntax Highlighting
 colors seahorse
 let python_highlight_all=1
 syntax on
 
+
 " Python
-au BufNewFile,BufRead *.py 
+au BufNewFile,BufRead *.py silent 
     set filetype=python
     set tabstop=4
     set softtabstop=4
@@ -51,5 +58,6 @@ au BufNewFile,BufRead *.py
     set autoindent
     set fileformat=unix
 
-au BufNewFile,BufRead *.jinja2
+
+au BufNewFile,BufRead *.jinja2 silent
     set filetype=jinja

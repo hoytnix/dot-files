@@ -22,4 +22,4 @@ pnmixer &
 thunderbird &
 
 ## Conky
-transset-df .8 -n conky &
+(sleep 5s && transset-df .8 -n conky)&

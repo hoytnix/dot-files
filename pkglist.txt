@@ -14,6 +14,7 @@ btrfs-progs
 bzip2
 cdrdao
 chromium
+cmake
 coin-or-mp
 conky
 coreutils
@@ -57,6 +58,7 @@ gsimplecal
 gst-plugins-bad
 gst-plugins-good
 gst-plugins-ugly
+gvim
 gzip
 handbrake
 hplip
@@ -91,6 +93,7 @@ mcomix
 mdadm
 mpv
 mtools
+mysql-python
 nano
 ncdu
 net-tools
@@ -150,7 +153,6 @@ vde2
 vi
 viewnior
 vigra
-vim
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
