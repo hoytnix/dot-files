@@ -87,15 +87,19 @@ def git_push():
     exec_me(cmd)
 
     cmd = []
-    print('\nEnter anything to say yes, otherwise press enter.')
-    answer = input('Push to Git? ')
-    if answer != '' and answer.lower() != 'n':
-        msg = input('\nCommit message: ')
+    answer = input('Push to Git? [y/n] ').lower() 
+    while True:
+        if answer == 'y':
+            msg = input('\nCommit message: ')
 
-        cmd.append('git commit -m "{msg}"'.format(msg=msg))
-        cmd.append('git push')
-    else:
-        cmd.append('git reset HEAD')
+            cmd.append('git commit -m "{msg}"'.format(msg=msg))
+            cmd.append('git push')
+            break
+        elif answer == 'n':
+            cmd.append('git reset HEAD')
+            break
+        else:
+            answer = input('Please enter y or n: ')
     exec_me(cmd)
 
 def main():
