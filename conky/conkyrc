@@ -70,11 +70,11 @@ ${top name 4} $alignr ${top cpu 4}  ${top mem 4}
 ${top name 5} $alignr ${top cpu 5}  ${top mem 5}
 
 ${font Input:bold:size=11}NETWORK ${hr 2}${font}
-${if_up wlan0}${if_match "${wireless_essid wlan0}" != "off/any"}
-WLAN (${wireless_essid wlan0})
-Down: ${downspeed wlan0}/s ${alignr}Up: ${upspeed wlan0} /s
-${downspeedgraph wlan0 20,120 fff7f3 ffe9dd} ${alignr}${upspeedgraph wlan0 20,120 fff7f3 ffe9dd}
-$color Total: ${totaldown wlan0} ${alignr}Total: ${totalup wlan0}
+${if_up wlp3s0}${if_match "${wireless_essid wlp3s0}" != "off/any"}
+WLAN (${wireless_essid wlp3s0})
+Down: ${downspeed wlp3s0}/s ${alignr}Up: ${upspeed wlp3s0} /s
+${downspeedgraph wlp3s0 20,120 fff7f3 ffe9dd} ${alignr}${upspeedgraph wlp3s0 20,120 fff7f3 ffe9dd}
+$color Total: ${totaldown wlp3s0} ${alignr}Total: ${totalup wlp3s0}
 ${endif}${endif}${if_up enp2s0f1}
 ETH
 Down: ${downspeed enp2s0f1}/s ${alignr}Up: ${upspeed enp2s0f1} /s

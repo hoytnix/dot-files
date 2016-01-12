@@ -50,6 +50,7 @@ git
 gksu
 glibc
 gmrun
+gnome-keyring
 gpart
 gparted
 grep
@@ -98,6 +99,7 @@ nano
 ncdu
 net-tools
 netctl
+network-manager-applet
 nilfs-utils
 nitrogen
 npm
