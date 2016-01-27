@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/indentpython.vim'
@@ -17,7 +17,8 @@ Plugin 'hdima/python-syntax'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'mitsuhiko/vim-jinja'
-Plugin 'Valloric/YouCompleteMe' 
+Plugin 'Valloric/YouCompleteMe'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -38,12 +39,18 @@ map <C-c><C-c> :w<CR>
 
 
 " NERDTree
-autocmd vimenter * NERDTree
+" Directory mode: Show NERDTree by default if no arguments are supplied to Vim.
+if len( split( system( "ps -o command= -p " . getpid() ) ) ) == 1
+    autocmd vimenter * NERDTree
+endif
 let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
 
-
 " Syntax Highlighting
-colors seahorse
+if has("gui_running")
+    colors zenburn
+else
+    colors seahorse
+endif
 let python_highlight_all=1
 syntax on
 

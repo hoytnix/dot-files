@@ -22,7 +22,7 @@ case $1 in
         shutter --window --no_session --min_at_startup --exit_after_capture
         ;;
     *)
-        echo "Unkown command."
+        echo "Unknown command."
         ;;
 esac
 

@@ -1,4 +1,6 @@
 [global_config]
+  title_font = Input 9
+  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
@@ -16,4 +18,5 @@
     background_type = transparent
     font = Input 10
     foreground_color = "#00ff00"
+    scrollbar_position = hidden
     use_system_font = False
