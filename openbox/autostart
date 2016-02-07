@@ -16,6 +16,7 @@ tint2 &
 conky &
 pnmixer &
 thunderbird & 
+deadbeef &
 
 ## Conky
 (sleep 5s && transset-df .8 -n conky)&

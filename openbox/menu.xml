@@ -27,7 +27,7 @@
     <item label="Firefox">
         <action name="Execute">
             <execute>
-                ~/bin/firefox/firefox
+                firefox-developer
             </execute>
         </action>
     </item>
