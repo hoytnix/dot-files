@@ -15,6 +15,7 @@ bzip2
 chromium
 clang
 cmake
+coin-or-mp
 compton
 conky
 coreutils
@@ -66,6 +67,7 @@ ipw2200-fw
 iw
 jfsutils
 less
+libreoffice-fresh
 licenses
 linux-firmware
 linux41
@@ -111,6 +113,7 @@ obconf
 open-fuse-iso-term
 openbox
 openresolv
+openssh
 os-prober
 pacman
 pavucontrol
@@ -133,6 +136,7 @@ s-nail
 sdparm
 sed
 shadow
+shutter
 smartmontools
 smplayer
 squashfs-tools

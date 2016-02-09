@@ -2,6 +2,17 @@ Dot Files
 =========
 
 
+
+ToDO:
+-----
+[ ] Shutter package
+[ ] Install script:
+[ ]     + Order-of-operations.
+[ ]     + Shell commands.
+[ ]     +   `which` support for command alternatives.
+
+
+
 Package Installation:
 ---------------------
 
