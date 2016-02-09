@@ -35,6 +35,7 @@ dnsmasq
 dosfstools
 e2fsprogs
 ecryptfs-utils
+epdfview
 ethtool
 exfat-utils
 f2fs-tools
