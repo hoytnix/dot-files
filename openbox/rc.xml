@@ -18,9 +18,14 @@
         <monitor>Any</monitor>
         <primaryMonitor>Mouse</primaryMonitor>
     </placement>
+
+    <!-- Settings: Theme -->
     <theme>
-        <name>Natura</name>
-        <titleLayout>SLIMC</titleLayout>
+
+        <!-- Name: I believe this is installed by default with OB. -->
+        <name>Natura</name>         
+        
+        <titleLayout>SLIMC</titleLayout> <!-- shade, label; iconify, maximize, close -->
         <!--
             avaible characters are NDSLIMC, each can occur at most once.
             N: window icon
@@ -31,38 +36,46 @@
             S: shade (roll up/down)
             D: omnipresent (on all desktops).
         -->
+        
         <keepBorder>yes</keepBorder>
+        
         <animateIconify>no</animateIconify>
+        
         <font place="ActiveWindow">
             <name>Liberation Sans</name>
             <size>10</size>
             <weight>Bold</weight>
             <slant>Normal</slant>
         </font>
+        
         <font place="InactiveWindow">
             <name>Liberation Sans</name>
             <size>10</size>
             <weight>Normal</weight>
             <slant>Normal</slant>
         </font>
+        
         <font place="MenuHeader">
             <name>Liberation Sans</name>
             <size>10</size>
             <weight>Normal</weight>
             <slant>Normal</slant>
         </font>
+        
         <font place="MenuItem">
             <name>Liberation Sans</name>
             <size>10</size>
             <weight>Normal</weight>
             <slant>Normal</slant>
         </font>
+        
         <font place="ActiveOnScreenDisplay">
             <name>Liberation Sans</name>
             <size>10</size>
             <weight>Normal</weight>
             <slant>normal</slant>
         </font>
+        
         <font place="InactiveOnScreenDisplay">
             <name>Liberation Sans</name>
             <size>10</size>
@@ -70,6 +83,8 @@
             <slant>normal</slant>
         </font>
     </theme>
+
+    <!-- Settings: Desktops -->
     <desktops>
         <number>4</number>
         <firstdesk>1</firstdesk>
@@ -81,6 +96,8 @@
         </names>
         <popupTime>875</popupTime>
     </desktops>
+
+    <!-- Settings: Resize -->
     <resize>
         <drawContents>yes</drawContents>
         <popupShow>Nonpixel</popupShow>
@@ -90,13 +107,19 @@
             <y>10</y>
         </popupFixedPosition>
     </resize>
+
+    <!-- Settings: Margins -->
     <margins>
         <top>0</top>
         <bottom>0</bottom>
         <left>0</left>
         <right>0</right>
     </margins>
+
+    <!-- Keyboard bindings -->
     <keyboard>
+        
+        <!-- Chain quit key -->
         <chainQuitKey>C-g</chainQuitKey>
 
         <!-- Openbox menu. -->
@@ -193,7 +216,7 @@
             </action>
         </keybind>
 
-        
+        <!-- TODO: This feature should be depreceated by immutable-layouts. -->
         <keybind key="W-Right">
             <action name="GrowToEdgeEast"/>
         </keybind>
@@ -255,6 +278,7 @@
             </action>
         </keybind>
 
+        <!-- i3: Send to desktop -->
         <keybind key="W-S-1">
             <action name="SendToDesktop">
                 <to>1</to>
@@ -279,9 +303,6 @@
                 <wrap>no</wrap>
             </action>
         </keybind>
-
-
-        
       
         <!-- Keybindings for windows -->
         <keybind key="A-F4">
@@ -320,11 +341,16 @@
             </action>
         </keybind>
     </keyboard>
+
+    <!-- Mouse bindings -->
     <mouse>
+        
+        <!-- Settings -->
         <dragThreshold>8</dragThreshold>
         <doubleClickTime>200</doubleClickTime>
         <screenEdgeWarpTime>400</screenEdgeWarpTime>
         <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
+
         <context name="Frame">
             <mousebind button="A-Left" action="Press">
                 <action name="Focus"/>
@@ -380,6 +406,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="Titlebar">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -424,6 +451,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -443,6 +471,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="Top">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -455,6 +484,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="Left">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -466,6 +496,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="Right">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -477,6 +508,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="Bottom">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -500,6 +532,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="TRCorner BRCorner TLCorner BLCorner">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -510,6 +543,7 @@
                 <action name="Resize"/>
             </mousebind>
         </context>
+        
         <context name="Client">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -524,6 +558,7 @@
                 <action name="Raise"/>
             </mousebind>
         </context>
+        
         <context name="Icon">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -541,6 +576,7 @@
                 </action>
             </mousebind>
         </context>
+        
         <context name="AllDesktops">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -551,6 +587,7 @@
                 <action name="ToggleOmnipresent"/>
             </mousebind>
         </context>
+        
         <context name="Shade">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -560,6 +597,7 @@
                 <action name="ToggleShade"/>
             </mousebind>
         </context>
+        
         <context name="Iconify">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -569,6 +607,7 @@
                 <action name="Iconify"/>
             </mousebind>
         </context>
+        
         <context name="Maximize">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
@@ -599,6 +638,7 @@
                 </action>
             </mousebind>
         </context>
+
         <context name="Close">
             <mousebind button="Left" action="Press">
                 <action name="Focus"/>
