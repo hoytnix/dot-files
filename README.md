@@ -46,7 +46,7 @@ Screenshots:
 Window Movements:
 -----------------
 
-Uses Vim-style commands. [*d] (jkl;)
+Uses Vim-style commands. (denoted as *d [jkl;])
 
 Focusing/directing: `Super+*d`
 
