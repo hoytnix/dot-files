@@ -609,44 +609,7 @@
                 <action name="Close"/>
             </mousebind>
         </context>
-        <!--
-        <context name="Desktop">
-            <mousebind button="Up" action="Click">
-                <action name="GoToDesktop">
-                    <to>previous</to>
-                </action>
-            </mousebind>
-            <mousebind button="Down" action="Click">
-                <action name="GoToDesktop">
-                    <to>next</to>
-                </action>
-            </mousebind>
-            <mousebind button="A-Up" action="Click">
-                <action name="GoToDesktop">
-                    <to>previous</to>
-                </action>
-            </mousebind>
-            <mousebind button="A-Down" action="Click">
-                <action name="GoToDesktop">
-                    <to>next</to>
-                </action>
-            </mousebind>
-            <mousebind button="C-A-Up" action="Click">
-                <action name="GoToDesktop">
-                    <to>previous</to>
-                </action>
-            </mousebind>
-            <mousebind button="C-A-Down" action="Click">
-                <action name="GoToDesktop">
-                    <to>next</to>
-                </action>
-            </mousebind>
-            <mousebind button="Left" action="Press">
-                <action name="Focus"/>
-                <action name="Raise"/>
-            </mousebind>
-        </context>
-        -->
+
         <context name="Root">
             <!-- Menus -->
             <mousebind button="Middle" action="Press">
@@ -660,6 +623,7 @@
                 </action>
             </mousebind>
         </context>
+
         <context name="MoveResize">
             <mousebind button="Up" action="Click">
                 <action name="GoToDesktop">
@@ -683,6 +647,7 @@
             </mousebind>
         </context>
     </mouse>
+
     <menu>
         <file>menu.xml</file>
         <hideDelay>200</hideDelay>
@@ -692,6 +657,7 @@
         <applicationIcons>yes</applicationIcons>
         <manageDesktops>yes</manageDesktops>
     </menu>
+
     <applications>
         <!--
         # this is an example with comments through out. use these to make your
