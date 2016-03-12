@@ -106,6 +106,20 @@
             </action>
         </keybind>
 
+        <!-- i3: Run a program. -->
+        <keybind key="W-d">
+            <action name="Execute">
+                <command>gmrun</command>
+            </action>
+        </keybind>
+
+        <!-- i3: Open a terminal. -->
+        <keybind key="W-Return">
+            <action name="Execute">
+                <command>urxvt</command>
+            </action>
+        </keybind>
+
         <!-- Keybindings for brightness control -->
         <keybind key="XF86MonBrightnessUp">
             <action name="Execute">
@@ -179,7 +193,7 @@
             </action>
         </keybind>
 
-        <!-- Keybindings for Aerosnap -->
+        
         <keybind key="W-Right">
             <action name="GrowToEdgeEast"/>
         </keybind>
@@ -193,6 +207,7 @@
             <action name="GrowToEdgeNorth"/>
         </keybind>
 
+        <!-- Aerosnap-like behaviour. -->
         <keybind key="W-A-Left">
             <action name="UnmaximizeFull"/>
             <action name="MaximizeVert"/>
@@ -214,37 +229,60 @@
             </action>
         </keybind>
         
-        <!-- Keybindings for desktop switching -->
-        <keybind key="C-A-Left">
+        <!-- i3: Desktop switching -->
+        <keybind key="W-1">
             <action name="GoToDesktop">
-                <to>left</to>
+                <to>1</to>
                 <wrap>no</wrap>
             </action>
         </keybind>
-        <keybind key="C-A-Right">
+        <keybind key="W-2">
             <action name="GoToDesktop">
-                <to>right</to>
+                <to>2</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-3">
+            <action name="GoToDesktop">
+                <to>3</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-4">
+            <action name="GoToDesktop">
+                <to>4</to>
                 <wrap>no</wrap>
             </action>
         </keybind>
 
-        <keybind key="S-A-Left">
+        <keybind key="W-S-1">
             <action name="SendToDesktop">
-                <to>left</to>
+                <to>1</to>
                 <wrap>no</wrap>
             </action>
         </keybind>
-        <keybind key="S-A-Right">
+        <keybind key="W-S-2">
             <action name="SendToDesktop">
-                <to>right</to>
+                <to>2</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-S-3">
+            <action name="SendToDesktop">
+                <to>3</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-S-4">
+            <action name="SendToDesktop">
+                <to>4</to>
                 <wrap>no</wrap>
             </action>
         </keybind>
 
-        <keybind key="W-d">
-            <action name="ToggleShowDesktop"/>
-        </keybind>
+
         
+      
         <!-- Keybindings for windows -->
         <keybind key="A-F4">
             <action name="Close"/>
@@ -260,14 +298,25 @@
             </action>
         </keybind>
 
-        <keybind key="W-S-Right">
+        <!-- i3: Focus vim-style -->
+        <keybind key="W-j">
             <action name="DirectionalCycleWindows">
-                <direction>right</direction>
+                <direction>west</direction>
             </action>
         </keybind>
-        <keybind key="W-S-Left">
+        <keybind key="W-k">
             <action name="DirectionalCycleWindows">
-                <direction>left</direction>
+                <direction>south</direction>
+            </action>
+        </keybind>
+        <keybind key="W-l">
+            <action name="DirectionalCycleWindows">
+                <direction>north</direction>
+            </action>
+        </keybind>
+        <keybind key="W-semicolon">
+            <action name="DirectionalCycleWindows">
+                <direction>east</direction>
             </action>
         </keybind>
     </keyboard>
@@ -560,6 +609,7 @@
                 <action name="Close"/>
             </mousebind>
         </context>
+        <!--
         <context name="Desktop">
             <mousebind button="Up" action="Click">
                 <action name="GoToDesktop">
@@ -596,6 +646,7 @@
                 <action name="Raise"/>
             </mousebind>
         </context>
+        -->
         <context name="Root">
             <!-- Menus -->
             <mousebind button="Middle" action="Press">

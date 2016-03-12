@@ -20,7 +20,7 @@
     <item label="Terminal">
         <action name="Execute">
             <execute>
-                terminator
+                urxvt
             </execute>
         </action>
     </item>
@@ -58,43 +58,11 @@
         </item>
     </menu>
 
-    <menu id="dev" label="Development">
-        <item label="Sublime Text">
-            <action name="Execute">
-                <execute>
-                    subl3
-                </execute>
-            </action>
-        </item>
-        <item label="Atom">
-            <action name="Execute">
-                <execute>
-                    atom
-                </execute>
-            </action>
-        </item>
-        <item label="Virtualbox">
-            <action name="Execute">
-                <execute>
-                    virtualbox
-                </execute>
-            </action>
-        </item>
-    </menu>
-
     <menu id="media" label="Media">
-
-        <item label="Music">
+        <item label="DeaDBeeF">
             <action name="Execute">
                 <execute>
                     deadbeef
-                </execute>
-            </action>
-        </item>
-        <item label="Comics">
-            <action name="Execute">
-                <execute>
-                    mcomix
                 </execute>
             </action>
         </item>
@@ -105,81 +73,47 @@
                 </execute>
             </action>
         </item>
+        <item label="Audacity">
+            <action name="Execute">
+                <execute>
+                    audacity
+                </execute>
+            </action>
+        </item>
+    </menu>
 
+    <menu id="office-menu" label="Office">
+        <item label="Spreadsheets">
+            <action name="Execute">
+                <execute>
+                    libreoffice --calc
+                </execute>
+            </action>
+        </item>
+        <item label="Writer">
+            <action name="Execute">
+                <execute>
+                    libreoffice --writer
+                </execute>
+            </action>
+        </item>
+        <item label="Presentation">
+            <action name="Execute">
+                <execute>
+                    libreoffice --impress
+                </execute>
+            </action>
+        </item>    
+        
         <separator />
-
-        <menu id="media-production-audio" label="Audio">
-            <item label="Audacity">
-                <action name="Execute">
-                    <execute>
-                        audacity
-                    </execute>
-                </action>
-            </item>
-            <item label="LMMS">
-                <action name="Execute">
-                    <execute>
-                        lmms
-                    </execute>
-                </action>
-            </item>
-            <item label="Converter">
-                <action name="Execute">
-                    <execute>
-                        soundconverter
-                    </execute>
-                </action>
-            </item>
-        </menu>
-
-        <menu id="media-production-video" label="Video">
-            <item label="Blender">
-                <action name="Execute">
-                    <execute>
-                        blender
-                    </execute>
-                </action>
-            </item>
-            <item label="Screencast">
-                <action name="Execute">
-                    <execute>
-                        kazam
-                    </execute>
-                </action>
-            </item>
-            <item label="Encoder">
-                <action name="Execute">
-                    <execute>
-                        handbrake
-                    </execute>
-                </action>
-            </item>
-        </menu>
-
-        <menu id="media-production-dvd" label="DVD">
-            <item label="Authoring">
-                <action name="Execute">
-                    <execute>
-                        devede_ng.py
-                    </execute>
-                </action>
-            </item>
-            <item label="Burner">
-                <action name="Execute">
-                    <execute>
-                        xfburn
-                    </execute>
-                </action>
-            </item>
-            <item label="Ripper">
-                <action name="Execute">
-                    <execute>
-                        asunder
-                    </execute>
-                </action>
-            </item>
-        </menu>
-
+        
+        <item label="LibreOffice">
+            <action name="Execute">
+                <execute>
+                    libreoffice
+                </execute>
+            </action>
+        </item>
     </menu>
 
     <menu id="utilities" label="Utilities">
@@ -211,42 +145,14 @@
                 </execute>
             </action>
         </item>
+        <item label="Sublime Text">
+            <action name="Execute">
+                <execute>
+                    subl3
+                </execute>
+            </action>
+        </item>
 
-        <separator />
-
-        <menu id="office-menu" label="Office">
-            <item label="Spreadsheets">
-                <action name="Execute">
-                    <execute>
-                        libreoffice --calc
-                    </execute>
-                </action>
-            </item>
-            <item label="Writer">
-                <action name="Execute">
-                    <execute>
-                        libreoffice --writer
-                    </execute>
-                </action>
-            </item>
-            <item label="Presentation">
-                <action name="Execute">
-                    <execute>
-                        libreoffice --impress
-                    </execute>
-                </action>
-            </item>    
-            
-            <separator />
-            
-            <item label="LibreOffice">
-                <action name="Execute">
-                    <execute>
-                        libreoffice
-                    </execute>
-                </action>
-            </item>
-        </menu>
     </menu>
 
     <separator />
