@@ -13,18 +13,9 @@
         }
     ],
 
-    "conky": [
-        {
-            "remote": "conkyrc",
-            "local": "~/.conkyrc"
-        }
-    ],
-
     "openbox": "~/.config/openbox",
 
-    "scripts": "~/bin/scripts",
-
-    "terminator": "~/.config/terminator",
+    "scripts": "~/Bin/scripts",
 
     "tint2": "~/.config/tint2",
 

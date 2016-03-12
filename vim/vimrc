@@ -2,23 +2,28 @@ set nocompatible
 filetype off
 
 " Vundle
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Vundle itself.
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'hdima/python-syntax'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'bling/vim-airline'
-Plugin 'mitsuhiko/vim-jinja'
-Plugin 'Valloric/YouCompleteMe'
 
+" Productivity
+
+Plugin 'scrooloose/nerdtree'  " Great file explorer.
+Plugin 'scrooloose/syntastic' " Syntax checking.
+
+
+" Colors
+
+Plugin 'jnurmine/Zenburn' " Gvim colors.
+
+
+" Languages
+
+Plugin 'rust-lang/rust.vim' " Rust
+"Plugin 'klen/python-mode'   " Python; installed manually due to issues with latest build.
 
 call vundle#end()
 filetype plugin indent on
@@ -34,8 +39,10 @@ set nobackup
 set clipboard=unnamedplus
 set undolevels=1000
 
+
 " Key-bindings
 map <C-c><C-c> :w<CR>
+imap jk <Esc>
 
 
 " NERDTree
@@ -45,7 +52,13 @@ if len( split( system( "ps -o command= -p " . getpid() ) ) ) == 1
 endif
 let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
 
+
+"
 " Syntax Highlighting
+"
+
+" Colors
+
 if has("gui_running")
     colors zenburn
 else
@@ -54,6 +67,67 @@ endif
 let python_highlight_all=1
 syntax on
 
+" klen/python-mode
+" 2. Common functionality ~
+let g:pymode = 1
+let g:pymode_warnings = 1
+let g:pymode_paths = []
+let g:pymode_trim_whitespaces = 1
+let g:pymode_options = 1
+let g:pymode_options_colorcolumn = 0 " Already global.
+let g:pymode_options_max_line_length = 79
+" 2.1 Python version ~
+let g:pymode_python = 'python'
+" 2.2 Python indentation ~
+let g:pymode_indent = 1 " PEP8.
+" 2.3 Python folding ~
+let g:pymode_folding = 1
+" 2.4 Vim motion ~
+let g:pymode_motion = 1
+" 2.5 Show documentation ~
+let g:pymode_doc = 1
+let g:pymode_doc_bind = 'K'
+" 2.6 Support virtualenv ~
+let g:pymode_virtualenv = 0 " Self-maintained.
+" 2.7 Run code ~
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
+" 2.8 Breakpoints ~
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_breakpoint_cmd = ''
+" 3. Code checking ~
+let g:pymode_lint = 0 " Self-maintained.
+" 4. Rope support ~
+let g:pymode_rope = 1 " TODO: Look into.
+" 4.1 Completion ~
+" let g:pymode_rope_completion = 0 "YouCompleteMe
+" 4.3 Refactoring ~
+let g:pymode_rope_rename_bind = '<C-c>rr'
+" 5. Syntax ~
+let g:pymode_syntax = 1
+let g:pymode_syntax_slow_sync = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_print_as_function = 1
+let g:pymode_syntax_highlight_async_await = 1
+let g:pymode_syntax_highlight_equal_operator = 1
+let g:pymode_syntax_highlight_stars_operator = 1
+let g:pymode_syntax_highlight_self = 1
+let g:pymode_syntax_indent_errors = 1
+let g:pymode_syntax_space_errors = 1
+let g:pymode_syntax_string_formatting = 1
+let g:pymode_syntax_string_format = 1
+let g:pymode_syntax_string_templates = 1
+let g:pymode_syntax_doctests = 1
+let g:pymode_syntax_builtin_objs = 1
+let g:pymode_syntax_builtin_types = 1
+let g:pymode_syntax_highlight_exceptions = 1
+let g:pymode_syntax_docstrings = 1
+
+
+"
+" Languages
+"
 
 " Python
 au BufNewFile,BufRead *.py silent 
@@ -65,6 +139,8 @@ au BufNewFile,BufRead *.py silent
     set autoindent
     set fileformat=unix
 
-
 au BufNewFile,BufRead *.jinja2 silent
     set filetype=jinja
+
+au BufNewFile,BufRead *.md silent
+    set filetype=markdown

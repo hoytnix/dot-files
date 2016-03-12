@@ -26,7 +26,7 @@ endfun
 
 " Color codes
 
-let s:bg     = '234' "#25262B
+let s:bg     = '235' "#25262B
 let s:grey   = '59'  "#65666B
 let s:white  = '188'
 let s:purple = '177'

@@ -4,34 +4,18 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-PS1="#\u@\h:\w:\[\033[01;32m\][\${PIPESTATUS[@]}]\[\033[00m\]\$ "
-#PS1='[\u@\h \W]\$ '
 
-# exports
-export EDITOR=nano
-export TERM=terminator
-export PATH=$PATH:/home/pr0xmeh/bin/aur-builds/google_appengine/
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
 
-# sudo
-alias s="sudo"
+bind '"[11~": "urxvt &\n"'
 
-# ls
-alias ls='ls --color=always'
+activate_venv() {
+    source ~/.venvs/$1/bin/activate
+}
+new_venv() {
+    python -m venv ~/.venvs/$1
+}
+alias venv=activate_venv
+alias venvN=new_venv
 
-# find
-alias f="find -P ~/ -name"
-
-# pacman
-alias pS="sudo pacman -S"
-alias pR="sudo pacman -R"
-alias pSyu="sudo pacman -Syu"
-
-# docker
-alias dip="docker-manage ip"
-alias dr="docker-manage run"
-alias db="docker-manage build"
-alias dls="docker-manage ls"
-alias dp="docker-manage pull"
-
-# file removal
-alias rmf="remove_files"

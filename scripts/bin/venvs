@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case $1 in
+    "new")
+        echo "New virtual environment."
+        python -m venv ~/.venvs/$2
+        ;;
+    *)
+        echo "Unknown command."
+        ;;
+esac
+
+exit 0
