@@ -22,14 +22,17 @@ Package Installation:
 
 
 
-Openbox Commands:
------------------
+Commands:
+=========
 
-Openbox:
+Menu:
+-----
 
 `Super+Space`: Openbox menu.
 
+
 Screenshots:
+------------
 
 `PrtSc`: select a portion of the screen.
 
@@ -39,8 +42,20 @@ Screenshots:
 
 `Alt+Ctrl+PrnSc`: select a window.
 
-Aerosnap:
 
-`Super+DirectionalKey`: Resize window.
+Window Movements:
+-----------------
 
-`Super+Alt+Left/Right`: Aerosnap.
+Uses Vim-style commands. [*d] (jkl;)
+
+Focusing/directing: `Super+*d`
+
+Moving: `Super+Shift+*d`
+
+
+Window Resizing:
+----------------
+
+Half-screen: `Super+Shift+Alt+j/;`
+
+Quarter-Screen: `Super+Alt+j/;`

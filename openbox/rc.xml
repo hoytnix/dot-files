@@ -216,22 +216,74 @@
             </action>
         </keybind>
 
-        <!-- TODO: This feature should be depreceated by immutable-layouts. -->
-        <keybind key="W-Right">
-            <action name="GrowToEdgeEast"/>
+        <!-- i3: Vim-style directions.. -->
+        <keybind key="W-j">
+            <action name="DirectionalCycleWindows">
+                <direction>west</direction>
+            </action>
         </keybind>
-        <keybind key="W-Left">
-            <action name="GrowToEdgeWest"/>
+        <keybind key="W-k">
+            <action name="DirectionalCycleWindows">
+                <direction>south</direction>
+            </action>
         </keybind>
-        <keybind key="W-Down">
-            <action name="GrowToEdgeSouth"/>
+        <keybind key="W-l">
+            <action name="DirectionalCycleWindows">
+                <direction>north</direction>
+            </action>
         </keybind>
-        <keybind key="W-Up">
-            <action name="GrowToEdgeNorth"/>
+        <keybind key="W-semicolon">
+            <action name="DirectionalCycleWindows">
+                <direction>east</direction>
+            </action>
+        </keybind>
+
+        <!-- i3: Vim-style movements. -->
+        <keybind key="W-S-j">
+            <action name="MoveToEdge">
+                <direction>west</direction>
+            </action>
+        </keybind>
+        <keybind key="W-S-k">
+            <action name="MoveToEdge">
+                <direction>south</direction>
+            </action>
+        </keybind>
+        <keybind key="W-S-l">
+            <action name="MoveToEdge">
+                <direction>north</direction>
+            </action>
+        </keybind>
+        <keybind key="W-S-semicolon">
+            <action name="MoveToEdge">
+                <direction>east</direction>
+            </action>
+        </keybind>
+
+        <!-- One-quarter window -->
+        <keybind key="W-A-j">
+            <action name="UnmaximizeFull"/>
+            <action name="MoveResizeTo">
+                <width>50%</width>
+                <height>50%</height>
+            </action>
+            <action name="MoveToEdge">
+                <direction>west</direction>
+            </action>
+        </keybind>
+        <keybind key="W-A-semicolon">
+            <action name="UnmaximizeFull"/>
+            <action name="MoveResizeTo">
+                <width>50%</width>
+                <height>50%</height>
+            </action>
+            <action name="MoveToEdge">
+                <direction>east</direction>
+            </action>
         </keybind>
 
         <!-- Aerosnap-like behaviour. -->
-        <keybind key="W-A-Left">
+        <keybind key="W-S-A-j">
             <action name="UnmaximizeFull"/>
             <action name="MaximizeVert"/>
             <action name="MoveResizeTo">
@@ -241,7 +293,7 @@
                 <direction>west</direction>
             </action>
         </keybind>
-        <keybind key="W-A-Right">
+        <keybind key="W-S-A-semicolon">
             <action name="UnmaximizeFull"/>
             <action name="MaximizeVert"/>
             <action name="MoveResizeTo">
@@ -316,28 +368,6 @@
                     <action name="Raise"/>
                     <action name="Unshade"/>
                 </finalactions>
-            </action>
-        </keybind>
-
-        <!-- i3: Focus vim-style -->
-        <keybind key="W-j">
-            <action name="DirectionalCycleWindows">
-                <direction>west</direction>
-            </action>
-        </keybind>
-        <keybind key="W-k">
-            <action name="DirectionalCycleWindows">
-                <direction>south</direction>
-            </action>
-        </keybind>
-        <keybind key="W-l">
-            <action name="DirectionalCycleWindows">
-                <direction>north</direction>
-            </action>
-        </keybind>
-        <keybind key="W-semicolon">
-            <action name="DirectionalCycleWindows">
-                <direction>east</direction>
             </action>
         </keybind>
     </keyboard>
