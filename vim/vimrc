@@ -11,8 +11,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Productivity
 
-Plugin 'scrooloose/nerdtree'  " Great file explorer.
-Plugin 'scrooloose/syntastic' " Syntax checking.
+Plugin 'scrooloose/nerdtree'    " Great file explorer.
+Plugin 'scrooloose/syntastic'   " Syntax checking.
+Plugin 'Valloric/YouCompleteMe' " Auto-completion.
 
 
 " Colors
@@ -144,3 +145,7 @@ au BufNewFile,BufRead *.jinja2 silent
 
 au BufNewFile,BufRead *.md silent
     set filetype=markdown
+
+au BufNewFile,BufRead Makefile silent
+    set tabstop=4
+    set fileformat=unix
