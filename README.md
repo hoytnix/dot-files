@@ -1,18 +1,6 @@
 Dot Files
 =========
 
-
-
-ToDO:
------
-[ ] Shutter package
-[ ] Install script:
-[ ]     + Order-of-operations.
-[ ]     + Shell commands.
-[ ]     +   `which` support for command alternatives.
-
-
-
 Package Installation:
 ---------------------
 
@@ -21,41 +9,27 @@ Package Installation:
 `pacman -S $(< pkglist.txt)`
 
 
-
 Commands:
-=========
+---------
 
-Menu:
------
-
-`Super+Space`: Openbox menu.
-
+Openbox menu: `Super+Space`
 
 Screenshots:
-------------
 
-`PrtSc`: select a portion of the screen.
-
-`Alt+PrnSc`: full-screen.
-
-`Ctrl+PrnSc`: active window.
-
-`Alt+Ctrl+PrnSc`: select a window.
++ `PrtSc`: select a portion of the screen.
++ `Alt+PrnSc`: full-screen.
++ `Ctrl+PrnSc`: active window.
++ `Alt+Ctrl+PrnSc`: select a window.
 
 
-Window Movements:
------------------
+Windows:
 
 Uses Vim-style commands. (denoted as *d [jkl;])
 
-Focusing/directing: `Super+*d`
++ Focusing/directing: `Super+*d`
++ Moving: `Super+Shift+*d`
 
-Moving: `Super+Shift+*d`
+Resizing:
 
-
-Window Resizing:
-----------------
-
-Half-screen: `Super+Shift+Alt+j/;`
-
-Quarter-Screen: `Super+Alt+j/;`
++ Half-screen: `Super+Shift+Alt+j/;`
++ Quarter-Screen: `Super+Alt+j/;`
