@@ -1,11 +1,4 @@
 {
-    "bash": [
-        {
-            "remote": "bashrc",
-            "local": "~/.bashrc"
-        }
-    ],
-
     "compton": [
         {
             "remote": "compton.conf",
@@ -38,6 +31,17 @@
         {
             "remote": "weather.service",
             "local": "/usr/lib/systemd/system/weather.service"
+        }
+    ],
+
+    "zsh": [
+        {
+            "remote": "zshrc",
+            "local": "~/.zshrc"
+        },
+        {
+            "remote": "seahorse.zsh-theme",
+            "local": "~/.oh-my-zsh/themes/seahorse.zsh-theme"
         }
     ]
 }

@@ -87,13 +87,15 @@ def git_push():
     exec_me(cmd)
 
     cmd = []
-    answer = input('Push to Git? [y/n] ').lower() 
+    answer = input('Push to Git? [y/n] ').lower()
     while True:
         if answer == 'y':
             msg = input('\nCommit message: ')
 
             cmd.append('git commit -m "{msg}"'.format(msg=msg))
-            cmd.append('git push')
+
+            branch = input('Which branch?: ')
+            cmd.append('git push origin {}'.format(branch))
             break
         elif answer == 'n':
             cmd.append('git reset HEAD')
