@@ -27,7 +27,7 @@
     <item label="Firefox">
         <action name="Execute">
             <execute>
-                firefox-developer
+                firefox
             </execute>
         </action>
     </item>
@@ -77,40 +77,6 @@
             <action name="Execute">
                 <execute>
                     audacity
-                </execute>
-            </action>
-        </item>
-    </menu>
-
-    <menu id="office-menu" label="Office">
-        <item label="Spreadsheets">
-            <action name="Execute">
-                <execute>
-                    libreoffice --calc
-                </execute>
-            </action>
-        </item>
-        <item label="Writer">
-            <action name="Execute">
-                <execute>
-                    libreoffice --writer
-                </execute>
-            </action>
-        </item>
-        <item label="Presentation">
-            <action name="Execute">
-                <execute>
-                    libreoffice --impress
-                </execute>
-            </action>
-        </item>    
-        
-        <separator />
-        
-        <item label="LibreOffice">
-            <action name="Execute">
-                <execute>
-                    libreoffice
                 </execute>
             </action>
         </item>
