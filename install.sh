@@ -124,4 +124,11 @@ fi
 # Create default Python virtual environments folder
 mkdir -p "$HOME/.venvs"
 
+# Append to the bottom of install.sh
+printf "\nDo you want to configure UFW, Fail2Ban, and Nginx security now? [y/N]: "
+read -r response
+if echo "$response" | grep -iq "^y"; then
+    "$DOTFILES_DIR/setup-server.sh"
+fi
+
 success "One-and-Done VPS Setup Complete! Restart your terminal session or run 'zsh' to load your environment."
