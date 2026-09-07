@@ -36,8 +36,29 @@ error() { printf "${RED}[ERR]${NC}   %s\n" "$1"; }
 
 info "Resolved dotfiles repository root: $DOTFILES_DIR"
 
+# --- Configure System Locale ---
+step "1. Configuring system locale..."
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+info "Generating en_US.UTF-8 locale..."
+if [ -f /etc/locale.gen ]; then
+    if grep -q "^# *en_US.UTF-8 UTF-8" /etc/locale.gen 2>/dev/null; then
+        sudo sed -i 's/^# *en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen 2>/dev/null || true
+    fi
+fi
+
+if command -v locale-gen >/dev/null 2>&1; then
+    sudo locale-gen en_US.UTF-8 || sudo locale-gen || true
+elif [ -x /usr/sbin/locale-gen ]; then
+    sudo /usr/sbin/locale-gen en_US.UTF-8 || sudo /usr/sbin/locale-gen || true
+elif command -v localectl >/dev/null 2>&1; then
+    sudo localectl set-locale LANG=en_US.UTF-8 || true
+fi
+success "Locale generated and set: LANG=$LANG LC_ALL=$LC_ALL"
+
 # --- Detect Package Manager ---
-step "1. Detecting operating system and package manager..."
+step "2. Detecting operating system and package manager..."
 if command -v apt-get >/dev/null 2>&1; then
     PKG_MAN="apt"
     info "Found 'apt-get'. Selected package manager: Debian/Ubuntu (apt)"
@@ -53,13 +74,13 @@ else
 fi
 
 # --- Install Base System & Server Packages ---
-step "2. Installing core CLI & server dependencies..."
+step "3. Installing core CLI & server dependencies..."
 case $PKG_MAN in
     apt)
         info "Running: sudo apt-get update..."
         sudo apt-get update
-        info "Installing core packages (zsh, vim, tmux, git, curl, wget, ripgrep, fd-find, htop, build-essential, ufw, fail2ban, python3-venv, python3-pip)..."
-        sudo apt-get install -y zsh vim tmux git curl wget ripgrep fd-find htop build-essential \
+        info "Installing core packages (locales, zsh, vim, tmux, git, curl, wget, ripgrep, fd-find, htop, build-essential, ufw, fail2ban, python3-venv, python3-pip)..."
+        sudo apt-get install -y locales zsh vim tmux git curl wget ripgrep fd-find htop build-essential \
             ufw fail2ban python3-venv python3-pip
         success "Core dependencies successfully installed via apt."
         ;;
@@ -83,7 +104,7 @@ case $PKG_MAN in
 esac
 
 # --- Optional Full Distribution Package List Installation ---
-step "3. Optional full distribution package list installation..."
+step "4. Optional full distribution package list installation..."
 info "Checking for available distribution package lists in $DOTFILES_DIR/pkglist..."
 
 PKGLIST_DIR="$DOTFILES_DIR/pkglist"
@@ -200,7 +221,7 @@ else
 fi
 
 # --- Change Default Shell to Zsh ---
-step "4. Configuring default login shell..."
+step "5. Configuring default login shell..."
 ZSH_BIN="$(command -v zsh || true)"
 info "Current user: $USER"
 info "Current shell: $SHELL"
@@ -220,7 +241,7 @@ else
 fi
 
 # --- Install Oh My Zsh ---
-step "5. Setting up Oh My Zsh..."
+step "6. Setting up Oh My Zsh..."
 if [ -d "$HOME/.oh-my-zsh" ]; then
     info "Oh My Zsh is already installed at $HOME/.oh-my-zsh. Skipping."
 else
@@ -230,7 +251,7 @@ else
 fi
 
 # --- Install NVM & Node LTS ---
-step "6. Setting up NVM (Node Version Manager) & Node.js LTS..."
+step "7. Setting up NVM (Node Version Manager) & Node.js LTS..."
 export NVM_DIR="$HOME/.nvm"
 if [ -d "$NVM_DIR" ]; then
     info "NVM directory already exists at $NVM_DIR."
@@ -255,7 +276,7 @@ else
 fi
 
 # --- Install PNPM ---
-step "7. Setting up PNPM package manager..."
+step "8. Setting up PNPM package manager..."
 if command -v pnpm >/dev/null 2>&1; then
     info "PNPM is already installed at $(command -v pnpm) (version: $(pnpm -v 2>/dev/null || echo 'unknown')). Skipping."
 else
@@ -265,7 +286,7 @@ else
 fi
 
 # --- Auto-Install NERDTree for Vim ---
-step "8. Setting up NERDTree plugin for Vim..."
+step "9. Setting up NERDTree plugin for Vim..."
 NERDTREE_DIR="$HOME/.vim/pack/vendor/start/nerdtree"
 if [ -d "$NERDTREE_DIR" ]; then
     info "NERDTree plugin already present at $NERDTREE_DIR. Skipping clone."
@@ -278,8 +299,16 @@ else
 fi
 
 # --- Create Symlinks ---
-step "9. Symlinking configuration files..."
+step "10. Symlinking configuration files..."
 info "Config source directory: $DOTFILES_DIR"
+
+# Ensure config directories are real directories, not stale directory symlinks
+for cfg_dir in "$HOME/.config/openbox" "$HOME/.config/tint2" "$HOME/.config/picom"; do
+    if [ -L "$cfg_dir" ] || [ -h "$cfg_dir" ]; then
+        warn "Removing directory symlink at $cfg_dir..."
+        rm -f "$cfg_dir"
+    fi
+done
 
 link_file() {
     src="$1"
@@ -289,18 +318,27 @@ link_file() {
         warn "Source path does not exist: $src. Skipping."
         return 0
     fi
-    if [ -L "$dst" ]; then
+
+    # Check if dst is already a symlink (including broken symlinks or relocated paths)
+    if [ -L "$dst" ] || [ -h "$dst" ]; then
         target="$(readlink "$dst" || true)"
-        if [ "$target" = "$src" ]; then
-            info "Symlink $dst already points to $src. Refreshing..."
+        if [ "$target" != "$src" ] || [ ! -e "$dst" ]; then
+            if [ ! -e "$dst" ]; then
+                warn "Symlink $dst is broken (target: $target). Removing stale symlink..."
+            else
+                info "Symlink $dst points to relocated/outdated path ($target). Removing stale symlink..."
+            fi
+            rm -f "$dst"
         else
-            info "Symlink $dst points to $target. Updating to $src..."
+            info "Symlink $dst already points to $src. Refreshing..."
+            rm -f "$dst"
         fi
     elif [ -e "$dst" ]; then
         info "Existing file or directory found at $dst. Backing up to ${dst}.backup"
         mv "$dst" "${dst}.backup"
         success "Backup created: ${dst}.backup"
     fi
+
     mkdir -p "$(dirname "$dst")"
     ln -sfn "$src" "$dst"
     success "Linked: $src -> $dst"
@@ -323,8 +361,45 @@ else
     info "Vim config $DOTFILES_DIR/vim/vimrc not found. Skipping."
 fi
 
+# Link Openbox Configuration
+info "Configuring Openbox window manager..."
+mkdir -p "$HOME/.config/openbox"
+if [ -d "$DOTFILES_DIR/openbox" ]; then
+    for ob_cfg in autostart rc.xml menu.xml environment; do
+        if [ -f "$DOTFILES_DIR/openbox/$ob_cfg" ]; then
+            if [ "$ob_cfg" = "autostart" ]; then
+                chmod +x "$DOTFILES_DIR/openbox/$ob_cfg"
+            fi
+            link_file "$DOTFILES_DIR/openbox/$ob_cfg" "$HOME/.config/openbox/$ob_cfg"
+        fi
+    done
+    # Link any other configs present in openbox directory
+    for ob_file in "$DOTFILES_DIR/openbox"/*; do
+        if [ -f "$ob_file" ]; then
+            ob_name="$(basename "$ob_file")"
+            case "$ob_name" in
+                autostart|rc.xml|menu.xml|environment) ;;
+                *) link_file "$ob_file" "$HOME/.config/openbox/$ob_name" ;;
+            esac
+        fi
+    done
+    success "Openbox configuration files linked to $HOME/.config/openbox."
+else
+    info "Openbox directory $DOTFILES_DIR/openbox not found. Skipping."
+fi
+
+# Link Tint2 Configuration
+info "Configuring Tint2 panel..."
+mkdir -p "$HOME/.config/tint2"
+if [ -f "$DOTFILES_DIR/tint2/tint2rc" ]; then
+    link_file "$DOTFILES_DIR/tint2/tint2rc" "$HOME/.config/tint2/tint2rc"
+else
+    info "Tint2 config $DOTFILES_DIR/tint2/tint2rc not found. Skipping."
+fi
+
 # Link Picom (Modern Compton replacement)
 info "Configuring Picom compositor..."
+mkdir -p "$HOME/.config/picom"
 if [ -f "$DOTFILES_DIR/picom/picom.conf" ]; then
     link_file "$DOTFILES_DIR/picom/picom.conf" "$HOME/.config/picom/picom.conf"
 else
@@ -332,11 +407,23 @@ else
 fi
 
 # Link Executable Bin Scripts
-step "10. Linking executable bin scripts..."
+step "11. Linking executable bin scripts..."
 if [ -d "$DOTFILES_DIR/scripts/bin" ]; then
     info "Found bin scripts directory at $DOTFILES_DIR/scripts/bin"
     info "Ensuring $HOME/.local/bin exists..."
     mkdir -p "$HOME/.local/bin"
+
+    # Remove broken or orphaned symlinks in ~/.local/bin pointing to stale dotfiles paths
+    for link in "$HOME/.local/bin"/*; do
+        if [ -L "$link" ] || [ -h "$link" ]; then
+            if [ ! -e "$link" ]; then
+                link_target="$(readlink "$link" || true)"
+                warn "Removing orphaned/broken symlink in ~/.local/bin: $link (pointed to: $link_target)"
+                rm -f "$link"
+            fi
+        fi
+    done
+
     for script in "$DOTFILES_DIR/scripts/bin"/*; do
         if [ -f "$script" ]; then
             script_name="$(basename "$script")"
@@ -352,7 +439,7 @@ else
 fi
 
 # Create default Python virtual environments folder
-step "11. Initializing Python virtual environments directory..."
+step "12. Initializing Python virtual environments directory..."
 if [ -d "$HOME/.venvs" ]; then
     info "Virtual environments directory $HOME/.venvs already exists."
 else
@@ -362,7 +449,7 @@ else
 fi
 
 # Append to the bottom of install.sh
-step "12. Optional Server Hardening..."
+step "13. Optional Server Hardening..."
 printf "\nDo you want to configure UFW and Fail2Ban security now? [y/N]: "
 read -r response
 if echo "$response" | grep -iq "^y"; then

@@ -14,7 +14,7 @@ set tabstop=4
 set smartindent
 set autoindent
 set list
-set listchars=tab:»·,trail:·
+set listchars=tab:»\ ,trail:·
 filetype plugin indent on
 syntax on
 set ttyfast
