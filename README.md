@@ -30,17 +30,18 @@ chmod +x install.sh setup-server.sh
 ### What `install.sh` Does:
 
 1. **Detects Package Manager**: Supports Debian/Ubuntu (`apt`), Arch Linux (`pacman`), and Fedora/RHEL (`dnf`).
-2. **Installs Core Tools**: `zsh`, `vim`, `tmux`, `git`, `curl`, `wget`, `ripgrep`, `fd`, `htop`, build tools, `nginx`, `ufw`, `fail2ban`, and Python.
-3. **Configures Shell**: Changes default shell to Zsh and installs [Oh My Zsh](https://ohmyz.sh/).
-4. **Node & Package Tools**: Installs NVM, Node.js (LTS), and PNPM.
-5. **Vim Setup**: Clones the NERDTree plugin to `~/.vim/pack/vendor/start/nerdtree`.
-6. **Symlinks Configs**:
+2. **Installs Core Tools**: `zsh`, `vim`, `tmux`, `git`, `curl`, `wget`, `ripgrep`, `fd`, `htop`, build tools, `ufw`, `fail2ban`, and Python.
+3. **Optional Distribution Package Lists**: Prompts to install a full curated package list from `pkglist/` (`arch.txt`, `debian.txt`, `ubuntu.txt`, `fedora.txt`).
+4. **Configures Shell**: Changes default shell to Zsh and installs [Oh My Zsh](https://ohmyz.sh/).
+5. **Node & Package Tools**: Installs NVM, Node.js (LTS), and PNPM.
+6. **Vim Setup**: Clones the NERDTree plugin to `~/.vim/pack/vendor/start/nerdtree`.
+7. **Symlinks Configs**:
    - `zsh/zshrc` -> `~/.zshrc`
    - `zsh/seahorse.zsh-theme` -> `~/.oh-my-zsh/custom/themes/seahorse.zsh-theme`
    - `vim/vimrc` -> `~/.vimrc`
    - `picom/picom.conf` -> `~/.config/picom/picom.conf`
    - `scripts/bin/*` -> `~/.local/bin/*`
-7. **Optional Hardening**: Prompts to execute `setup-server.sh`.
+8. **Optional Hardening**: Prompts to execute `setup-server.sh`.
 
 ---
 
@@ -131,8 +132,8 @@ Configured with `scripts/bin/screenshot_select`:
 
 ---
 
-## Legacy Arch Package List & Sync
-
-- `pkglist.txt`: Native Arch package snapshot (`pacman -Qqen > pkglist.txt`).
-- `manage.py`: Python utility to compare file checksums between system configs and repository files, update `pkglist.txt`, and push changes to Git.
-
+## Distribution Package Lists & Sync
+ 
+- `pkglist/`: Directory containing distribution-specific package lists (`arch.txt`, `debian.txt`, `ubuntu.txt`, `fedora.txt`).
+- `scripts/pacman/backup.sh`: Native Arch package snapshot script (`pacman -Qqen > pkglist/arch.txt`).
+- `manage.py`: Python utility to compare file checksums between system configs and repository files, update `pkglist/arch.txt`, and push changes to Git.

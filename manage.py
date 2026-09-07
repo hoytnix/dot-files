@@ -74,7 +74,7 @@ def exec_me(args):
 def update_pkglist():
     cmd = []
     cmd.append('cd {dir}'.format(dir=abs_current))
-    cmd.append('pacman -Qqen > pkglist.txt')
+    cmd.append('pacman -Qqen > pkglist/arch.txt')
     exec_me(cmd)
 
 def git_push():

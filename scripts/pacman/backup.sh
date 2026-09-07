@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-pacman -Qqen > pkglist.txt
+pacman -Qqen > "$(dirname "$0")/../../pkglist/arch.txt"
